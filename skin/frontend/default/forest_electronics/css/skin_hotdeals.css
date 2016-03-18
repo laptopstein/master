@@ -1,0 +1,119 @@
+.hotdeal-products .jcarousel-skin .jcarousel-container {
+/*    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #F0F6F9;
+    border: 1px solid #346F97;
+*/
+}
+
+.hotdeal-products .jcarousel-skin .jcarousel-direction-rtl {
+	direction: rtl;
+}
+
+.hotdeal-products .jcarousel-skin .jcarousel-container-horizontal {
+    width: 100%;
+    padding: 0 0;
+}
+
+.hotdeal-products .jcarousel-skin .jcarousel-clip {
+    overflow: hidden;
+}
+
+.hotdeal-products .jcarousel-skin .jcarousel-clip-horizontal {
+    width: 100%;
+    height: auto;
+}
+
+.hotdeal-products .jcarousel-skin .jcarousel-item {
+  width: 235px;
+    height:auto !important;
+	margin:0 18px 0 0;
+}
+
+.hotdeal-products .jcarousel-skin .jcarousel-item-horizontal {
+	text-align:left;
+}
+
+.hotdeal-products .jcarousel-skin .jcarousel-direction-rtl .jcarousel-item-horizontal {
+	margin-left: 10px;
+    margin-right: 0;
+}
+
+.hotdeal-products .jcarousel-skin .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.hotdeal-products .jcarousel-skin .jcarousel-next-horizontal {
+ background:url("../images/sprite.png") no-repeat scroll 0 -617px transparent;
+    cursor: pointer;
+    height: 36px;
+    position: absolute;
+    right: 0;
+    top: -58px;
+    width: 27px;
+}
+
+.hotdeal-products .jcarousel-skin .jcarousel-direction-rtl .jcarousel-next-horizontal {
+    left: 5px;
+    right: auto;
+    background-image: url(prev-horizontal.png);
+}
+
+.hotdeal-products .jcarousel-skin .jcarousel-next-horizontal:hover,
+.hotdeal-products .jcarousel-skin .jcarousel-next-horizontal:focus {
+    background-position:0 -668px;
+}
+
+.hotdeal-products .jcarousel-skin .jcarousel-next-horizontal:active {
+    background-position:0 -668px;
+}
+
+.hotdeal-products .jcarousel-skin .jcarousel-next-disabled-horizontal,
+.hotdeal-products .jcarousel-skin .jcarousel-next-disabled-horizontal:hover,
+.hotdeal-products .jcarousel-skin .jcarousel-next-disabled-horizontal:focus,
+.hotdeal-products .jcarousel-skin .jcarousel-next-disabled-horizontal:active {
+    cursor: default;
+    background-position:0 -668px;
+}
+
+.hotdeal-products .jcarousel-skin .jcarousel-prev-horizontal {
+    height: 36px;
+    position: absolute;
+    right: 22px;
+    top: -58px;
+    cursor: pointer;
+	 width: 27px;
+    background: url("../images/sprite.png") no-repeat scroll 0 -718px transparent;
+	 
+}
+
+.hotdeal-products .jcarousel-skin .jcarousel-direction-rtl .jcarousel-prev-horizontal {
+    left: auto;
+    right: 5px;
+    background-image: url(next-horizontal.png);
+}
+
+.hotdeal-products .jcarousel-skin .jcarousel-prev-horizontal:hover, 
+.hotdeal-products .jcarousel-skin .jcarousel-prev-horizontal:focus {
+    background-position:  0 -769px;
+}
+
+.hotdeal-products.jcarousel-skin .jcarousel-prev-horizontal:active {
+    background-position: 0 -769px;
+}
+
+.hotdeal-products .jcarousel-skin .jcarousel-prev-disabled-horizontal,
+.hotdeal-products .jcarousel-skin .jcarousel-prev-disabled-horizontal:hover,
+.hotdeal-products.jcarousel-skin .jcarousel-prev-disabled-horizontal:focus,
+.hotdeal-products .jcarousel-skin .jcarousel-prev-disabled-horizontal:active {
+    cursor: default;
+    background-position:  0 -769px;
+}
+
+.hotdeal-products .jcarousel-skin .jcarousel-item .actions	{ margin-bottom:8px;}
+

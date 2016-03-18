@@ -1,0 +1,93 @@
+/*
+ * jQuery FlexSlider v2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ */
+
+ 
+/* Browser Resets */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav { list-style: none;} 
+
+/* FlexSlider Necessary Styles
+*********************************/ 
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {width: 100%; display: block;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
+html[xmlns] .slides {display: block;} 
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider {position: relative;}
+.flex-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;}
+.loading .flex-viewport {max-height: 300px;}
+.flexslider .slides {}
+
+/* Direction Nav */
+.flex-direction-nav { display:none; }
+.slider_inner:hover .flex-direction-nav {  display:block; transition: all 200ms ease; }
+.flex-direction-nav li a.flex-next
+{ 
+	   background: url("../../images/sprite.png") no-repeat scroll -6px -2118px transparent;
+    font-size: 0;
+    height: 59px !important;
+    position: absolute;
+    right: 0;
+    top: 210px;
+    width: 29px !important;
+	
+}
+.flex-direction-nav li a.flex-prev
+{ 
+	   background: url("../../images/sprite.png") no-repeat scroll -9px -1937px transparent;
+    font-size: 0;
+    height: 59px !important;
+    left: 0;
+    position: absolute;
+    top: 210px;
+    width: 29px !important;
+}
+.flex-direction-nav li a.flex-prev:hover	{ background-position:-9px -2028px;} 
+.flex-direction-nav li a.flex-next:hover		{ background-position:-6px -2209px;}
+ 
+ 
+/* Control Nav */
+.flex-control-nav {position: absolute; top:460px; right:10px;z-index:9595;}
+ 
+.flex-control-nav li {margin: 0 3px; float:left;}
+.flex-control-paging li a {
+	background: url("../../images/sprite.png") no-repeat scroll -4px -1625px transparent;
+    cursor: pointer;
+    display: block;
+    height: 20px;
+    text-indent: -9999px;
+    width: 20px;
+	 
+}
+.flex-control-paging li a:hover { background-position:-5px -1663px;}
+.flex-control-paging li a.flex-active { background-position:-5px -1663px; cursor: default; }
+
+.flex-control-thumbs {margin: 5px 0 0; position: static; overflow: hidden;}
+.flex-control-thumbs li {width: 25%; float: left; margin: 0;}
+.flex-control-thumbs img {width: 100%; display: block; opacity: .7; cursor: pointer;}
+.flex-control-thumbs img:hover {opacity: 1;}
+.flex-control-thumbs .flex-active {opacity: 1; cursor: default;}

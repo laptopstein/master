@@ -1,0 +1,61 @@
+.sidebarmenu{  margin-top:4px; }
+.sidebarmenu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    z-index: 59;
+}
+.sidebarmenu ul li {
+    position: relative;
+background: url("../../../../images/sprite.png") no-repeat scroll -1px -2637px transparent;
+    padding: 4px 0 4px 19px;
+	border-bottom:1px dotted #DEDEDE;
+}
+.sidebarmenu ul li:hover{ background-position:-1px -2603px;  }
+.sidebarmenu ul li:last-child	{ border:none;}
+.sidebarmenu ul li.active{ background-position:-1px -2603px;}
+.sidebarmenu ul li.active a	{ font-weight:normal;color:#9D4C73  !important;} 
+.sidebarmenu ul li.active ul li a		{ color:#000 !important; }
+.sidebarmenu ul li a {
+    display: block;
+    overflow: auto;
+    padding: 0;
+    text-decoration: none;
+	color:#434343;
+}
+.sidebarmenu ul li a:visited {
+    color: white;
+}
+.sidebarmenu ul li a:hover {
+	text-decoration:underline;color:#9D4C73  !important;
+}
+.sidebarmenu ul li ul li a:hover{text-decoration:underline;color:#9D4C73  !important;}
+.sidebarmenu ul li ul {
+    background: none repeat scroll 0 0 #FFF;
+	border:1px solid #EEE9DE;
+    position: absolute;
+    top: 5px;
+    visibility: hidden;
+    width: 170px;
+    z-index: 5959;
+}
+#sidebarmenu1 li ul li {
+    margin:0;
+    padding: 4px 8px;
+	background:none;
+	border-bottom:1px solid #EEE9DE;
+}
+.sidebarmenu a.subfolderstyle {
+    background: url("../../../../images/maxshop_arrow.png") no-repeat scroll 97% 50% transparent;
+}
+#sidebarmenu1 li a {
+    color: #000 ;
+}
+#sidebarmenu1 li a.active {
+    color: #9D4C73 !important;
+}
+#sidebarmenu1 li ul li a {
+    color: #000;
+	font-weight:normal;
+    font-size: 11px;
+}

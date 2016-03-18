@@ -1,0 +1,115 @@
+/**
+ * MageSupport.com
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.magesupport.com/license/
+ *
+ * @category   MS
+ * @package    MS_Cartdropdown
+ * @copyright  Copyright (c) 2008-2010 MageSupport.com (http://www.magesupport.com)
+ * @license    http://www.magesupport.com/license/
+ */
+.header-cart{ 
+	
+	margin:38px 8px 0 0;
+	
+	/*z-index:9;	*/
+}
+.header-cart .block-cart{ 
+	border:none; 
+	background:none; 
+	text-align:left;  
+	margin-bottom:0; 
+	padding-bottom:3px; 
+	position:relative;
+}
+.cart_icon	
+{   
+  background: url("../../../images/sprite.png") no-repeat scroll 3px -109px transparent;
+    float: left;
+    height: 38px;
+    margin-right: 0;
+    padding: 0;
+    width: 44px;
+}
+.header-cart .block-cart .cart-label{ 
+   background: none repeat scroll 0 0 #fff;
+    border: 1px solid #E7E7E4;
+    color: #444444;
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+    height: 38px;
+    padding: 0 33px 0 0;
+    position: relative;
+    text-align: left;
+	    box-shadow: 0 0 5px #E7E7E4;
+}
+#panel{  display:none;  }
+.header-cart .block-cart:hover #panel{ display:block;  }
+.cart_border{ border:1px solid #E1E1E1; }
+
+.header-cart .block-cart .cart-label:hover	{ cursor:pointer;}
+ 
+
+.header-cart .block-cart .cart-label strong{ 
+	color:#363636; 
+	font-size:12px; 
+	font-weight:normal;
+}
+.cart-label .price { color:#D8787C; }
+.header-cart .block-cart .block-content{ 
+	  background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E0E0E0;
+       margin-top: 0;
+    padding: 0;
+    position: absolute;
+    right: 8px;
+    top: 40px;
+    width: 250px;
+    z-index: 99999;
+	
+}
+
+#panel {
+    display: none;
+}
+
+.header-cart .block-cart .cart_topbg {  
+	margin-left:0;  
+}
+.header-cart .block-cart .main-cart { padding:15px; background:none repeat scroll 0 0 #fff}
+
+.header-container .top-container { border:none!important; padding:0!important; background:none!important; width:700px;  float:left; } 
+ 
+.right_arrow
+{
+	/* border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #939393;
+    content: "";*/
+    background: url("../../../images/sprite.png") no-repeat scroll -4px -163px transparent;
+    display: block;
+    height: 18px;
+    margin: 0;
+    position: absolute;
+    right: 7px;
+    top: 11px;
+    vertical-align: top;
+    width: 20px;
+}
+.header-cart .actions .viewcart-btn		{ margin-right:5px;}
+.cart_mini_right	{ float:left; margin:10px 0 0 2px;} 
+.top_arrow {
+	border-bottom: 5px solid #E0E0E0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	content: "";
+	margin-top: -6px;
+	position: absolute;
+	right: 4%;
+	text-align: center;
+}

@@ -1,0 +1,406 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    Megnor
+ * @package     Megnor_Framework
+ * @copyright   Copyright (c) 2012 Megnor Computer Pvt Ltd. (http://www.templatemela.com)
+ */
+-->
+<config>
+    <modules>
+        <Megnor_Framework>
+            <version>0.1.0</version>
+        </Megnor_Framework>
+    </modules>
+        
+      <global>
+        <models>
+			<framework_adminhtml>
+				<class>Megnor_Framework_Adminhtml_Model</class>
+      		</framework_adminhtml>
+			<framework>
+                <class>Megnor_Framework_Model</class>				
+                <resourceModel>Megnor_Framework_Model_Resource</resourceModel>
+            </framework>
+            <framework_mysql4>
+                <class>Megnor_Framework_Model_Mysql4</class>
+            </framework_mysql4>
+			
+        </models>
+
+        <blocks>
+            <framework>
+                <class>Megnor_Framework_Block</class>				
+            </framework>			
+        </blocks>
+
+        <helpers>
+            <framework>
+                <class>Megnor_Framework_Helper</class>
+            </framework>
+			
+        </helpers>
+
+		<resources>
+			<framework_setup>
+				<setup>
+					<module>framework</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</framework_setup>
+			<framework_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</framework_write>
+			<framework_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</framework_read>
+		</resources>
+    </global>      
+
+	<frontend>
+		<layout>
+			<updates>
+				<framework>
+					<file>tempmela.xml</file>					
+				</framework>
+			</updates>
+		</layout>
+		<translate> 
+			<modules> 
+				<framework> 
+					<files> 
+						<default>Megnor_Framework.csv</default> 
+					</files> 
+				</framework> 
+			</modules> 
+		</translate>
+	</frontend>
+	    
+    <admin>
+        <routers>
+            <framework>
+                <use>admin</use>
+                <args>
+                    <module>Megnor_Framework</module>
+                    <frontName>framework</frontName>
+                </args>
+            </framework>
+        </routers>
+		<translate>
+			<modules>
+				<framework>
+					<files>
+						<default>Megnor_Framework.csv</default>
+					</files>
+				</framework>
+			</modules>
+		</translate>
+    </admin>
+    
+ 
+    <adminhtml>
+        <menu>
+            <megnor_menu translate="title" module="framework">
+                <title>Templatemela Framework</title>
+                <sort_order>90</sort_order>
+                <children>
+                    <seo_settings translate="title" module="framework">
+                        <title>Yoast SEO Options</title>
+                        <action>adminhtml/system_config/edit/section/seo_settings</action>
+                        <sort_order>2</sort_order>
+                    </seo_settings>
+		            <template_settings translate="title" module="framework">
+		                <title>Template Settings</title>
+		                <sort_order>1</sort_order>
+		                <action>adminhtml/system_config/edit/section/template_settings</action>
+		            </template_settings>
+
+		            <template_design translate="title" module="framework">
+		                <title>Template Design</title>
+		                <sort_order>0</sort_order>
+		                <action>adminhtml/system_config/edit/section/template_design</action>
+		            </template_design>
+
+					<!--<banner>
+						<title>Manage Banners</title>
+						<sort_order>4</sort_order>
+						<children>
+							<banner module="banner">
+								<title>Manage Banners</title>
+								<sort_order>0</sort_order>
+								<action>banner/adminhtml_banner</action>
+							</banner>
+							<bannergroup module="banner">
+								<title>Manage Banner Groups</title>
+								<sort_order>1</sort_order>
+								<action>banner/adminhtml_bannergroup</action>
+							</bannergroup>
+							<bannersetting module="banner">
+								<title>Banner Options</title>
+								<sort_order>2</sort_order>
+								<action>adminhtml/system_config/edit/section/banner</action>
+							</bannersetting>
+						</children>
+					</banner>-->
+					
+                </children>                
+            </megnor_menu>
+        </menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+					  <system>
+                           <children>
+                               <config>
+                                   <children>
+									<seo_settings translate="title" module="framework">
+										<title>Yoast SEO Options</title>
+										<sort_order>2</sort_order>
+									</seo_settings>
+									<template_settings translate="title" module="framework">
+										<title>Template Settings</title>
+										<sort_order>1</sort_order>
+									</template_settings>
+
+									<template_design translate="title" module="framework">
+										<title>Template Design</title>
+										<sort_order>0</sort_order>
+									</template_design>
+								 </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+            <updates>
+                <template_settings>
+                    <file>megnorframework.xml</file>
+                </template_settings>
+            </updates>
+        </layout>		
+    </adminhtml>
+    
+		<default>
+			<!-- =================================== Template Design Value =================================== -->
+			<template_design>
+				<general>
+					<templatewidth>1000px</templatewidth>
+					<leftcolwidth>215px</leftcolwidth>
+					<rightcolwidth>215px</rightcolwidth>
+					<showcontrolpanel>1</showcontrolpanel>
+					<toptobottom>1</toptobottom>
+					
+					<ragularfontfamily>Varela</ragularfontfamily>
+					<ragularotherfontfamily></ragularotherfontfamily>
+					<headingfontfamily>Allerta</headingfontfamily>
+					<basicfontsize>11px</basicfontsize>
+					
+					<ragulartextcolor>444444</ragulartextcolor>
+					<regularepricecolor>D67677</regularepricecolor>
+					<specialpricecolor>909090</specialpricecolor>
+					<linkcolor>3B3B3B</linkcolor>
+					<linkhovercolor>D67677</linkhovercolor>
+					<nicecombobox>1</nicecombobox>				
+					
+					<bgcolor>F7F6F1</bgcolor>	
+					<backgroundrepeat>0</backgroundrepeat>
+					<bgposition_x>0px</bgposition_x>
+					<bgposition_y>0px</bgposition_y>
+					
+					<button_fontfamily>Varela</button_fontfamily>
+					<button_bgcolor>D67677</button_bgcolor>					
+					<button_textcolor>ffffff</button_textcolor>
+					<button_hoverbgcolor>533232</button_hoverbgcolor>
+					<button_hovertextcolor>ffffff</button_hovertextcolor>
+					<button_activebgcolor>533232</button_activebgcolor>
+					<button_activetextcolor>ffffff</button_activetextcolor>
+					
+					<icon_bgcolor>Dmgj2k</icon_bgcolor>
+					<icon_bghovercolor>RJNF4j</icon_bghovercolor>					
+				</general>
+				
+				<header_setting>
+					<header_bgcolor>F7F6F1</header_bgcolor>		
+					<headerbackgroundrepeat>0</headerbackgroundrepeat>			
+					<header_bgpostion_x>0px</header_bgpostion_x>
+					<header_bgpostion_y>0px</header_bgpostion_y>
+					
+					<header_toplinkfonttype>Varela</header_toplinkfonttype>
+					<header_toplinkcolor>4C3938</header_toplinkcolor>
+					<header_toplinkhovercolor>D67677</header_toplinkhovercolor>
+					
+					<navigation_bgcolor>394c6b</navigation_bgcolor>
+					<navigationbackgroundrepeat>repeat-x</navigationbackgroundrepeat>
+					<navigation_bgpostion_x>0px</navigation_bgpostion_x>
+					<navigation_bgpostion_y>0px</navigation_bgpostion_y>
+					<upload_bgimage>repeat</upload_bgimage>
+					
+					<navigation_linkfonttype>Varela</navigation_linkfonttype>
+					<navigation_bglinkcolor></navigation_bglinkcolor>					
+					<navigation_textlinkcolor>FFFFFF</navigation_textlinkcolor>
+					<navigation_hoverlinkbgcolor>627594</navigation_hoverlinkbgcolor>
+					<navigation_hoverlinktextcolor>FFFFFF</navigation_hoverlinktextcolor>
+					<navigation_activelinkbgcolor>627594</navigation_activelinkbgcolor>
+					<navigation_activelinktextcolor>FFFFFF</navigation_activelinktextcolor>
+					
+					<navigation_dropdownbgcolor>FFFFFF</navigation_dropdownbgcolor>
+					<navigation_dropdownlinkcolor>676767</navigation_dropdownlinkcolor>
+					<navigation_dropdownhoverbkgcolor></navigation_dropdownhoverbkgcolor>
+					<navigation_dropdownhoverlinkcolor>D67677</navigation_dropdownhoverlinkcolor>					
+				
+				</header_setting>
+				
+				<breadcrumb_setting>
+					<breadcrumb_bgcolor>jr4n3l</breadcrumb_bgcolor>
+					<breadcrumbsbackgroundrepeat>0</breadcrumbsbackgroundrepeat>
+					<breadcrumb_bgpostion_x>0px</breadcrumb_bgpostion_x>
+					<breadcrumb_bgpostion_y>0px</breadcrumb_bgpostion_y>
+					
+					<breadcrumbfontfamily>Varela</breadcrumbfontfamily>
+					<breadcrumbotherfontfamily></breadcrumbotherfontfamily>
+					<breadcrumb_linkcolor>000000</breadcrumb_linkcolor>
+					<breadcrumb_hoverlinkcolor>B0B0B0</breadcrumb_hoverlinkcolor>
+					<breadcrumbsdividerbackgroundrepeat>0</breadcrumbsdividerbackgroundrepeat>					
+				</breadcrumb_setting>
+				
+				<footer_setting>
+					<footer_fontfamily>Andika</footer_fontfamily>
+					<footer_otherfontfamily></footer_otherfontfamily>
+					<footer_fontsize>11px</footer_fontsize>
+					<footer_bgcolor>485A79</footer_bgcolor>
+					<footer_bgpostion_x>0px</footer_bgpostion_x>
+					<footer_bgpostion_y>0px</footer_bgpostion_y>
+					
+					<footer_linkfonttype>Varela</footer_linkfonttype>
+					<footer_linkotherfonttype></footer_linkotherfonttype>
+					<footer_linkcolor>A3ACBC</footer_linkcolor>
+					<footer_hoverlinkcolor>ffffff</footer_hoverlinkcolor>
+					
+				</footer_setting>
+				
+							
+			</template_design>
+			
+			<!-- =================================== Template Setting Value =================================== -->
+		
+			<template_settings>
+				<general>
+	            	<wishlist>1</wishlist>
+					<compare>1</compare>
+					<aspect_ratio>1</aspect_ratio>  
+					
+				</general>
+				
+				<header_setting>
+					<toplinks>1</toplinks>  
+					<statictoplinks>1</statictoplinks>
+					<currency>1</currency>					
+					<languages>1</languages>
+					<search_bar>1</search_bar>
+					<custom_cms_block>0</custom_cms_block>
+					<cart_drop_down>1</cart_drop_down>
+				</header_setting>
+				
+				<products_listing>
+					<new_label>0</new_label>
+					<sale_label>0</sale_label>															
+					<diplay_product_per_row>3</diplay_product_per_row>
+					<grid_image_width>200</grid_image_width>
+					<grid_image_height>200</grid_image_height>
+					
+					<add_to_links_grid>1</add_to_links_grid>
+					<add_to_links_grid_icon>0</add_to_links_grid_icon>
+					
+					<add_to_links_list>1</add_to_links_list>
+					<add_to_links_list_icon>1</add_to_links_list_icon>
+				</products_listing>
+				
+				<products_info_page>
+					<image_width>320</image_width>
+					<image_height>400</image_height>
+					<moreimagewidth>70</moreimagewidth>	
+					<moreimageheight>70</moreimageheight>
+					<zoom_option>cloud_zoom</zoom_option>
+					<!--<additionalimage_view>slider</additionalimage_view>-->
+					<social_icon>Default Share</social_icon>
+					<quick_view>1</quick_view>
+					<related_product>1</related_product>
+					<upsell_product>1</upsell_product>
+					<prev_next_button>1</prev_next_button>
+					
+					<enable_third_column>0</enable_third_column>					
+					<attribute_code_1></attribute_code_1>
+					<attribute_code_2></attribute_code_2>
+					<attribute_code_3></attribute_code_3>
+					
+					
+					<lightboxoverlayopacity>0.8</lightboxoverlayopacity>
+					<lightboxresizespeed>7</lightboxresizespeed>					
+					<lightboxlabelimage>Image</lightboxlabelimage>
+					<lightboxlabelof>of</lightboxlabelof>
+					
+					<cloud_position>inside</cloud_position>
+					<cloud_show_title>1</cloud_show_title>
+					<cloud_title_opacity>50</cloud_title_opacity>
+					<cloud_lens_opacity>50</cloud_lens_opacity>
+					<cloud_zoom_width></cloud_zoom_width>
+					<cloud_zoom_height></cloud_zoom_height>
+					<cloud_big_image_width>800</cloud_big_image_width>
+					<cloud_big_image_height>800</cloud_big_image_height>
+					<cloud_tint_color>e0e0e0</cloud_tint_color>
+					<cloud_tint_opacity>50</cloud_tint_opacity>
+					
+					<enable_tab>1</enable_tab>
+					<description_tab>1</description_tab>
+					<additional_tab>1</additional_tab>
+					<upsell_tab>0</upsell_tab>
+					<related_tab>1</related_tab>
+					<tags_tab>1</tags_tab>
+					<review_tab>1</review_tab>					
+					
+					<custom_tab>0</custom_tab>
+					<custom_tab1>0</custom_tab1>
+					
+					<cms_tab>0</cms_tab>
+					<cms_tab1>0</cms_tab1>
+					
+				</products_info_page>				
+				
+				
+			</template_settings>
+			
+			<design>
+				<head translate="default_description" module="page">
+					<default_robots>INDEX,FOLLOW</default_robots>
+				</head>
+			</design>
+			<seo_settings>
+				<noindex>
+					<search>0</search>
+					<customer>0</customer>
+					<checkout>0</checkout>
+					<contacts>0</contacts>
+					<wishlist>0</wishlist>
+					<compare>0</compare>
+					<friend>0</friend>
+					<reviews>0</reviews>
+					<tags>0</tags>
+					<rss>0</rss>
+				</noindex>
+			</seo_settings>
+			
+		</default>
+</config>

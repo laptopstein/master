@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Megnor_Banner>
+            <version>0.2.0</version>
+        </Megnor_Banner>
+    </modules>
+    <frontend>
+        <routers>
+            <banner>
+                <use>standard</use>
+                <args>
+                    <module>Megnor_Banner</module>
+                    <frontName>banner</frontName>
+                </args>
+            </banner>
+        </routers>
+        <layout>
+            <updates>
+                <banner>
+                    <file>banner.xml</file>
+                </banner>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Megnor_Banner>
+                    <files>
+                        <default>Megnor_Banner.csv</default>
+                    </files>
+                </Megnor_Banner>
+            </modules>
+        </translate>
+    </frontend>
+     
+    <admin>
+        <routers>
+            <banner>
+                <use>admin</use>
+                <args>
+                    <module>Megnor_Banner</module>
+                    <frontName>banner</frontName>
+                </args>
+            </banner>
+        </routers>
+    </admin>
+    
+    <adminhtml>
+        <menu>
+            <!--<banner module="banner">
+                <title>Banner</title>
+                <sort_order>75</sort_order>
+                <children>
+                    <banner module="banner">
+                        <title>Manage Banners</title>
+                        <sort_order>0</sort_order>
+                        <action>banner/adminhtml_banner</action>
+                    </banner>
+                    <bannergroup module="banner">
+                        <title>Manage Banner Groups</title>
+                        <sort_order>1</sort_order>
+                        <action>banner/adminhtml_bannergroup</action>
+                    </bannergroup>
+                    <bannersetting module="banner">
+                        <title>Settings</title>
+                        <sort_order>2</sort_order>
+                        <action>adminhtml/system_config/edit/section/banner</action>
+                    </bannersetting>
+                </children>
+            </banner>-->
+			<!--<megnor_menu module="banner">
+                <title>Megnor Framework</title>
+                <sort_order>75</sort_order>
+                <children>
+                    <banner module="banner">
+                        <title>Manage Banners</title>
+                        <sort_order>0</sort_order>
+                        <action>banner/adminhtml_banner</action>
+                    </banner>
+                    <bannergroup module="banner">
+                        <title>Manage Banner Groups</title>
+                        <sort_order>1</sort_order>
+                        <action>banner/adminhtml_bannergroup</action>
+                    </bannergroup>
+                    <bannersetting module="banner">
+                        <title>Banner Settings</title>
+                        <sort_order>2</sort_order>
+                        <action>adminhtml/system_config/edit/section/banner</action>
+                    </bannersetting>
+                </children>
+            </megnor_menu>-->
+			
+			
+			<megnor_menu translate="title" module="banner">
+			
+                <children>					
+					<banner>
+						<title>Manage Banner</title>
+						<sort_order>75</sort_order>
+						<children>
+							<banner module="banner">
+								<title>Manage Banners</title>
+								<sort_order>0</sort_order>
+								<action>banner/adminhtml_banner</action>
+							</banner>
+							<bannergroup module="banner">
+								<title>Manage Banner Groups</title>
+								<sort_order>1</sort_order>
+								<action>banner/adminhtml_bannergroup</action>
+							</bannergroup>
+							<bannersetting module="banner">
+								<title>Banner Settings</title>
+								<sort_order>2</sort_order>
+								<action>adminhtml/system_config/edit/section/banner</action>
+							</bannersetting>
+						</children>
+					</banner>					
+                </children>  
+				              
+            </megnor_menu>
+			
+        </menu>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <banner>
+                            <title>Banner Module</title>
+                            <sort_order>11</sort_order>
+                            <children>
+                                <banner>
+                                    <title>Manage Banners</title>
+                                </banner>
+                                <bannergroup>
+                                    <title>Manage Banners Groups</title>
+                                </bannergroup>
+                                <bannersetting>
+                                    <title>Banner Settings</title>
+                                </bannersetting>
+                            </children>
+                        </banner>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <banner>
+                                            <title>Banner Settings</title>
+                                        </banner>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <banner>
+                    <file>banner.xml</file>
+                </banner>
+            </updates>
+        </layout>
+    </adminhtml>
+    <global>
+        <models>
+            <banner>
+                <class>Megnor_Banner_Model</class>
+                <resourceModel>banner_mysql4</resourceModel>
+            </banner>
+            <banner_mysql4>
+                <class>Megnor_Banner_Model_Mysql4</class>
+                <entities>
+                    <banner>
+                        <table>uni_banner</table>
+                    </banner>
+                    <bannergroup>
+                        <table>uni_bannergroup</table>
+                    </bannergroup>
+                </entities>
+            </banner_mysql4>
+        </models>
+        <blocks>
+            <banner>
+                <class>Megnor_Banner_Block</class>
+            </banner>            
+        </blocks>
+        <helpers>
+            <banner>
+                <class>Megnor_Banner_Helper</class>
+            </banner>
+        </helpers>
+        <resources>
+            <banner_setup>
+                <setup>
+                    <module>Megnor_Banner</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </banner_setup>
+            <banner_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </banner_write>
+            <banner_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </banner_read>
+        </resources>
+    </global>
+    <default>
+        <banner>
+            <banner>
+                <banner_time_delay>3000</banner_time_delay>
+				<banner_autoplay>1</banner_autoplay>                
+            </banner>
+        </banner>
+    </default>
+</config>

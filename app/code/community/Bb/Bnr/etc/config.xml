@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Bb_Bnr>
+            <version>0.1.0</version>
+        </Bb_Bnr>
+    </modules>
+    <global>
+        <currency>
+            <import>
+                <services>
+                    <bnr>
+                        <name>BNR RON</name>
+                        <model>bb_bnr/currency_import_bnr</model>
+                    </bnr>
+                </services>
+            </import>
+        </currency>
+
+        <models>
+            <bb_bnr>
+                <class>Bb_Bnr_Model</class>
+            </bb_bnr>
+        </models>
+    </global>
+</config>

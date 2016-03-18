@@ -1,0 +1,75 @@
+<?php
+/**
+ * Product list template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+?>
+<div id="new_product" class="homepage_productgrid">
+<div class="page-title"><h2><?php echo $this->getHeading(); ?></h2></div>
+
+<?php $_productCollection=$this->getProductCollection() ?>
+
+<?php if(!$_productCollection->count()): ?>
+<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php else: ?>
+ 
+ 
+<div class="block block-related" id="newproduct_slider">
+	     <ul class="new-products-list mycarousel_newproduct" id="block_newproducts">
+    <?php $i=0; foreach ($_productCollection as $_product):  $i++;?>
+
+            <li class="item">
+			
+				<?php if($this->helper('framework')->isNewProduct($_product)):?>
+					<div class="new-label"><?php echo $this->__('New Label') ?></div>
+				<?php endif; ?>
+				
+				<?php if($this->helper('framework')->isSpecialProduct($_product)):?>
+					<div class="sale-label"><?php echo $this->__('Sale Label') ?></div>
+				<?php endif; ?>	
+			
+			
+                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image url">
+				
+				<?php if($this->helper('framework')->getAspectRatio()):?>				
+					<img class="photo fn" src="<?php echo $this->helper('adaptiveResize/image')->init($_product, 'small_image')->setCropPosition('top')->adaptiveResize(145,145); ?>" width="145" height="145" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+				<?php else:	?>	
+					<img class="photo fn" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(220,290); ?>" width="220" height="290" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />			
+				<?php endif; ?>	
+				
+				</a>
+                
+				<h2 class="fn product-name" ><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->htmlEscape($_product->getName())?></a></h2>
+				
+                <?php if($_product->getRatingSummary()): ?>
+                <div class="description"><?php echo $this->getReviewsSummaryHtml($_product, 'short') ?></div>
+                <?php endif; ?>
+				
+				<?php if($this->getPriceDisplay()): ?>
+                	<?php echo $this->getPriceHtml($_product, true) ?>
+                <?php endif; ?>
+				
+				<?php if($this->getAddtocart()): ?>				
+					<div class="actions">
+						<?php if($_product->isSaleable()): ?>
+							<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+						<?php else: ?>
+							<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+						<?php endif; ?>                    
+					</div>
+                <?php endif; ?>
+					
+            </li>
+
+        <?php endforeach ?>
+        
+        </ul>
+		      <script type="text/javascript">decorateList('block_newproducts', 'none-recursive')</script>
+		</div>
+    
+ <?php endif; ?>
+ 
+ 
+
+</div>

@@ -1,0 +1,301 @@
+<?php
+/**
+ * TemplateMela
+ * @copyright  Copyright (c) 2010 TemplateMela. (http://www.templatemela.com)
+ * @license    http://www.templatemela.com/license/
+ */
+?>
+
+
+<style media="all" type="text/css">
+/*======================= Body Settimg ================*/
+body				
+{ 
+	font-size:<?php echo $this->helper('framework')->getTemplateBasicFontSize(); ?>;
+	color:#<?php echo $this->helper('framework')->getTemplateRegulareTextColor(); ?>;
+	<?php 
+	if($this->helper('framework')->getTemplateBackgroundImage() != ""): ?> 
+	background-image: url("<?php echo Mage::getBaseUrl('media')."wysiwyg"."/"."megnor"."/" . $this->helper('framework')->getTemplateBackgroundImage() ?>"); ?>;
+	<?php endif; ?>
+	background-color:#<?php echo $this->helper('framework')->getTemplateBackgroundColor(); ?>;
+	background-repeat:<?php echo $this->helper('framework')->getTemplateBackgroundrepeatXY(); ?>;
+	background-position:<?php echo $this->helper('framework')->getTemplateBackgroundPosX(); ?> <?php echo $this->helper('framework')->getTemplateBackgroundPosY(); ?>
+
+}
+.page_inner,.header,.main,.footer_inner,.footer_bottom,.custom_footer_block	,#advancedmenu	,.nav-container	,.area-a , .footer_bottom ,.slider_main
+{ width:<?php echo $this->helper('framework')->getTemplateWidth(); ?>; margin:0 auto;}
+.col-left			{ width:<?php echo $this->helper('framework')->getTemplateLeftColWidth(); ?>; }
+.col-right			{ width:<?php echo $this->helper('framework')->getTemplateRightColWidth(); ?>; }
+
+
+<?php 
+if	(($this->helper('framework')->getTemplateRagularFontType() == "Other Font") || ($this->helper('framework')->getTemplateRagularFontType() == "--Please Select--")): 
+	if( $this->helper('framework')->getTemplateRagularspecifiedFontType() != ""): ?>
+body,html, input, select, textarea {
+	font-family:<?php echo $this->helper('framework')->getTemplateRagularspecifiedFontType();  ?> }	
+<?php 	endif; 
+elseif (($this->helper('framework')->getTemplateRagularFontType() != "") || ($this->helper('framework')->getTemplateRagularFontType() != "--Please Select--")): 
+?>
+body,html, input, select, textarea {
+	font-family:<?php echo $this->helper('framework')->getTemplateRagularFontType(); ?> }	
+<?php endif; ?>
+
+
+<?php 
+if	(($this->helper('framework')->getTemplateHeadingFontType() == "Other Font") || ($this->helper('framework')->getTemplateHeadingFontType() == "--Please Select--")): 
+	if( $this->helper('framework')->getTemplateHeadingspecifiedFontType() != ""): ?>
+h1,h2,h3,h4,h5,h6 {
+	font-family:<?php echo $this->helper('framework')->getTemplateHeadingspecifiedFontType();  ?> }	
+<?php 	endif; 
+elseif (($this->helper('framework')->getTemplateHeadingFontType() != "") || ($this->helper('framework')->getTemplateHeadingFontType() != "--Please Select--")): 
+?>
+h1,h2,h3,h4,h5,h6 {
+	font-family:<?php echo $this->helper('framework')->getTemplateHeadingFontType(); ?> }	
+<?php endif; ?>
+
+
+
+a					{ color:#<?php echo $this->helper('framework')->getTemplateLinkColor(); ?>; }
+a:hover				{ color:#<?php echo $this->helper('framework')->getTemplateLinkHoverColor(); ?>; }
+
+
+<?php 
+if	(($this->helper('framework')->getTemplateButtonFontType() == "Other Font") || ($this->helper('framework')->getTemplateButtonFontType() == "--Please Select--")): 
+	if( $this->helper('framework')->getTemplateButtonotherFontType() != ""): ?>
+button, input[type="reset"], input[type="submit"], input[type="button"]{
+	font-family:<?php echo $this->helper('framework')->getTemplateButtonotherFontType();  ?> }	
+<?php 	endif; 
+elseif (($this->helper('framework')->getTemplateButtonFontType() != "") || ($this->helper('framework')->getTemplateButtonFontType() != "--Please Select--")): 
+?>
+button, input[type="reset"], input[type="submit"], input[type="button"]{
+	font-family:<?php echo $this->helper('framework')->getTemplateButtonFontType(); ?> }	
+<?php endif; ?>
+
+
+
+
+button, input[type="reset"], input[type="submit"], input[type="button"],
+#wishlist-table tr td .link-edit, .dashboard .box .box-title a, button, input[type="reset"], input[type="submit"], input[type="button"],.buttons-set p.back-link
+{ 
+	background:#<?php echo $this->helper('framework')->getTemplateButtonBackgroundColor(); ?>; 
+	color:#<?php echo $this->helper('framework')->getTemplateButtonTextColor(); ?>; 
+	<?php echo $this->helper('framework')->getTemplateButtonCustom(); ?>
+}
+.buttons-set p.back-link a	{ color:#<?php echo $this->helper('framework')->getTemplateButtonTextColor(); ?>;  }
+button:hover,#wishlist-table tr td .link-edit:hover,.dashboard .box .box-title a:hover
+{
+	background:#<?php echo $this->helper('framework')->getTemplateButtonBackgroundHoverColor(); ?>;
+	color:#<?php echo $this->helper('framework')->getTemplateButtonTextHoverColor(); ?>; 
+	<?php echo $this->helper('framework')->getTemplateButtonHoverCustom(); ?>;
+	text-decoration:none;
+}
+.buttons-set p.back-link a:hover
+{
+	color:#<?php echo $this->helper('framework')->getTemplateButtonTextHoverColor(); ?>; 
+	text-decoration:none;	
+}
+/*=============================== General Setting ===============================*/
+.regular-price .price,.price-box .price
+{
+	color:#<?php echo $this->helper('framework')->getTemplateRegularePriceColor(); ?>; 
+}
+.old-price .price ,.price-box .old-price
+{color:#<?php echo $this->helper('framework')->getTemplateSpecialPriceColor(); ?>; }
+
+
+/*==================  Header Setting ======================*/
+.header-container			
+{ 
+	background-color:#<?php echo $this->helper('framework')->getTemplateHeaderBackgroundColor(); ?>;
+	<?php if($this->helper('framework')->getTemplateHeaderBackgroundImage() != ""): ?> 
+	background-image: url("<?php echo Mage::getBaseUrl('media')."wysiwyg"."/"."megnor"."/" . $this->helper('framework')->getTemplateHeaderBackgroundImage() ?>"); ?>; 
+	<?php endif; ?>
+	background-repeat:<?php echo $this->helper('framework')->getTemplateHeaderBackgroundImagerepeatoption(); ?>;
+	background-position: <?php echo $this->helper('framework')->getTemplateHeaderBackgroundPosX(); ?> <?php echo $this->helper('framework')->getTemplateHeaderBackgroundPosY(); ?>;
+}
+
+<?php 
+if	(($this->helper('framework')->getTemplateHeaderTopLinkFontType() == "Other Font") || ($this->helper('framework')->getTemplateHeaderTopLinkFontType() == "--Please Select--")): 
+	if( $this->helper('framework')->getTemplateHeaderTopLinkotherFontType() != ""): ?>
+.header_top_left .links a {
+	font-family:<?php echo $this->helper('framework')->getTemplateHeaderTopLinkotherFontType();  ?>;
+	color:#<?php echo $this->helper('framework')->getTemplateHeaderTopLinkColor(); ?>;
+}	
+<?php 	endif; 
+elseif (($this->helper('framework')->getTemplateHeaderTopLinkFontType() != "") || ($this->helper('framework')->getTemplateHeaderTopLinkFontType() != "--Please Select--")): 
+?>
+.header_top_left .links a {
+	font-family:<?php echo $this->helper('framework')->getTemplateHeaderTopLinkFontType(); ?> ;
+	color:#<?php echo $this->helper('framework')->getTemplateHeaderTopLinkColor(); ?>;
+}	
+<?php endif; ?>
+
+.header_top_left .links a:hover	{ color:#<?php echo $this->helper('framework')->getTemplateHeaderTopLinkHoverColor(); ?>; }
+
+/*============== Navigation Setting =====================*/
+.nav-container	
+{ <?php echo $this->helper('framework')->getTemplateNavCustomCss(); ?> }
+.nav-container	
+{
+	background-color:#<?php echo $this->helper('framework')->getTemplateNavBackgroundColor(); ?>; 	
+	<?php if($this->helper('framework')->getTemplateNavBackgroundImage() != ""): ?> 
+	background-image: url("<?php echo Mage::getBaseUrl('media')."wysiwyg"."/"."megnor"."/" . $this->helper('framework')->getTemplateNavBackgroundImage() ?>"); ?>; 
+	<?php endif; ?>
+	background-repeat:<?php echo $this->helper('framework')->getTemplateNavBackgroundImageRepeatXY(); ?>;
+	background-position:<?php echo $this->helper('framework')->getTemplateNavBackgroundPosX(); ?> <?php echo $this->helper('framework')->getTemplateNavBackgroundPosY(); ?>
+	
+}
+
+#advancedmenu .megnor-advanced-menu-popup .itemMenu a:hover , #nav li ul li a:hover, #nav ul li:hover
+{ background-color:#<?php echo $this->helper('framework')->getTemplateNavDropDownbkgHoverColor(); ?> ;}
+
+
+
+<?php 
+if( ($this->helper('framework')->getTemplateNavLinkFontType() == "Other Font") || ($this->helper('framework')->getTemplateNavLinkFontType() == "--Please Select--")): 
+	if( $this->helper('framework')->getTemplateNavLinkotherFontType() != ""): ?>
+#nav a,div.menu a, div.megnor-advanced-menu-popup a {
+	font-family:<?php echo $this->helper('framework')->getTemplateNavLinkotherFontType();  ?>;
+	background-color:#<?php echo $this->helper('framework')->getTemplateNavLinkBackgroundcolor(); ?>;
+	color:#<?php echo $this->helper('framework')->getTemplateNavLinkTextcolor(); ?>;
+}	
+<?php 	endif; 
+elseif (($this->helper('framework')->getTemplateNavLinkFontType() != "") || ($this->helper('framework')->getTemplateNavLinkFontType() != "--Please Select--")): 
+?>
+#nav a,div.menu a, div.megnor-advanced-menu-popup a {
+	font-family:<?php echo $this->helper('framework')->getTemplateNavLinkFontType(); ?> ;
+	background-color:#<?php echo $this->helper('framework')->getTemplateNavLinkBackgroundcolor(); ?>;
+	color:#<?php echo $this->helper('framework')->getTemplateNavLinkTextcolor(); ?>;
+}	
+<?php endif; ?>
+
+
+#nav li:hover a,div.menu li:hover a, div.megnor-advanced-menu-popup a:hover,div.menu.active
+{
+	background-color:#<?php echo $this->helper('framework')->getTemplateNavLinkBackgroundHovercolor(); ?>;
+	color:#<?php echo $this->helper('framework')->getTemplateNavLinkTextHovercolor(); ?>;	
+}
+div.menu.active a	{ color:#<?php echo $this->helper('framework')->getTemplateNavLinkTextHovercolor(); ?>;}
+#nav a:hover,div.menu a:hover, div.megnor-advanced-menu-popup a:hover
+{
+	background-color:#<?php echo $this->helper('framework')->getTemplateNavLinkBackgroundHovercolor(); ?>;
+	color:#<?php echo $this->helper('framework')->getTemplateNavLinkTextHovercolor(); ?>;		
+}
+#nav li.active a,div.menu.act,div.menu.act a
+{
+	background-color:#<?php echo $this->helper('framework')->getTemplateNavActiveBackgroundColor(); ?>;
+	color:#<?php echo $this->helper('framework')->getTemplateNavActiveLinkColor(); ?>;	
+}
+#nav ul li,#nav ul li.parent,#advancedmenu .megnor-advanced-menu-popup .itemMenu 
+{
+	background-color:#<?php echo $this->helper('framework')->getTemplateNavDropDownBackColor(); ?>;
+}
+
+
+#nav ul li a,#nav ul li.parent a,#advancedmenu .megnor-advanced-menu-popup .itemMenu  a
+{
+	
+	color:#<?php echo $this->helper('framework')->getTemplateNavDropDownLinkColor(); ?>;
+}
+#nav ul li a:hover,#advancedmenu .megnor-advanced-menu-popup .itemMenu a:hover
+{
+	color:#<?php echo $this->helper('framework')->getTemplateNavDropDownLinkHoverColor(); ?> !important;
+}
+#nav ul li a, #nav ul li.parent a		{ <?php echo $this->helper('framework')->getTemplateNavDropDownCustomCss(); ?>; }
+
+/*===================================== Breadcrumb ========================*/
+.breadcrumbs		
+{
+	background-color:#<?php echo $this->helper('framework')->getTemplateBreadcrumbBackgroundColor(); ?>; 	
+	<?php if($this->helper('framework')->getTemplateBreadcrumbBackgroundImage() != ""): ?> 
+	background-image: url("<?php echo Mage::getBaseUrl('media')."wysiwyg"."/"."megnor"."/" . $this->helper('framework')->getTemplateBreadcrumbBackgroundImage() ?>"); ?>;
+	<?php endif; ?>
+	background-repeat:<?php echo $this->helper('framework')->getTemplateBreadcrumbBackgroundImageRepeatXY(); ?>; 
+	background-position:<?php echo $this->helper('framework')->getTemplateBreadcrumbBackgroundPosX(); ?> <?php echo $this->helper('framework')->getTemplateBreadcrumbBackgroundPosY(); ?>	
+}
+.breadcrumbs li	
+{ 
+	background:url("<?php echo Mage::getBaseUrl('media')."wysiwyg"."/"."megnor"."/" . $this->helper('framework')->getTemplateBreadcrumbDeviderImage() ?>") no-repeat scroll 100% 60% transparent; 
+	background-repeat:<?php echo $this->helper('framework')->getTemplateBreadcrumbDeviderImageRepeatXY(); ?>; 
+	padding-left:5px;
+}
+
+<?php 
+if( ($this->helper('framework')->getTemplateBreadcrumbFontType() == "Other Font") || ($this->helper('framework')->getTemplateBreadcrumbFontType() == "--Please Select--")): 
+	if( $this->helper('framework')->getTemplateBreadcrumbotherFontType() != ""): ?>
+.breadcrumbs li a,.breadcrumbs li  {
+	font-family:<?php echo $this->helper('framework')->getTemplateBreadcrumbotherFontType();  ?>;
+}	
+<?php 	endif; 
+elseif (($this->helper('framework')->getTemplateBreadcrumbFontType() != "") || ($this->helper('framework')->getTemplateBreadcrumbFontType() != "--Please Select--")): 
+?>
+.breadcrumbs li a,.breadcrumbs li  {
+	font-family:<?php echo $this->helper('framework')->getTemplateBreadcrumbFontType(); ?> ;
+}	
+<?php endif; ?>
+.breadcrumbs li a { color:#<?php echo $this->helper('framework')->getTemplateBreadcrumbLinkColor(); ?>;	 }
+.breadcrumbs li a:hover	{color:#<?php echo $this->helper('framework')->getTemplateBreadcrumbLinkHoverColor(); ?>;	}
+
+/*================================= Footer Setting =========================*/
+<?php 
+if( ($this->helper('framework')->getTemplateFooterTextFontType() == "Other Font") || ($this->helper('framework')->getTemplateFooterTextFontType() == "--Please Select--")): 
+	if( $this->helper('framework')->getTemplateFooterotherTextFontType() != ""): ?>
+.footer_top  {
+	font-family:<?php echo $this->helper('framework')->getTemplateFooterotherTextFontType();  ?>;
+}	
+<?php 	endif; 
+elseif (($this->helper('framework')->getTemplateFooterTextFontType() != "") || ($this->helper('framework')->getTemplateFooterTextFontType() != "--Please Select--")): 
+?>
+.footer_top {
+	font-family:<?php echo $this->helper('framework')->getTemplateFooterTextFontType(); ?> ;
+}	
+<?php endif; ?>
+.footer_top			
+{ 
+	font-size:<?php echo $this->helper('framework')->getTemplateFooterTextFontSize(); ?>;
+	background-color:#<?php echo $this->helper('framework')->getTemplateFooterBackgroundColor(); ?>; 
+	<?php if($this->helper('framework')->getTemplateFooterBackgroundImage() != ""): ?> 
+	background-image: url("<?php echo Mage::getBaseUrl('media')."wysiwyg"."/"."megnor"."/" . $this->helper('framework')->getTemplateFooterBackgroundImage() ?>"); ?>; 
+	<?php endif; ?>
+	
+	background-position:<?php echo $this->helper('framework')->getTemplateFooterBackgroundPosX(); ?> <?php echo $this->helper('framework')->getTemplateFooterBackgroundPosY(); ?>;	
+	<?php echo $this->helper('framework')->getTemplateFooterCustomCSS(); ?>
+}
+
+<?php 
+if( ($this->helper('framework')->getTemplateFooterLinkFontType() == "Other Font") || ($this->helper('framework')->getTemplateFooterLinkFontType() == "--Please Select--")): 
+	if( $this->helper('framework')->getTemplateFooterLinkotherFontType() != ""): ?>
+.footer .custom_footer_block .footer-area .static_link ul li a{
+	font-family:<?php echo $this->helper('framework')->getTemplateFooterLinkotherFontType();  ?>;
+	color:#<?php echo $this->helper('framework')->getTemplateFooterLinkFontColor(); ?>;	
+}	
+<?php 	endif; 
+elseif (($this->helper('framework')->getTemplateFooterLinkFontType() != "") || ($this->helper('framework')->getTemplateFooterLinkFontType() != "--Please Select--")): 
+?>
+ 	
+<?php endif; ?>
+.footer .custom_footer_block .footer-area .static_link ul li a{color:#<?php echo $this->helper('framework')->getTemplateFooterLinkFontColor(); ?>;}
+.footer .custom_footer_block .footer-area .static_link ul li a:hover	{color:#<?php echo $this->helper('framework')->getTemplateFooterLinkFontHoverColor(); ?>;	}
+.new-label
+{
+<?php if($this->helper('framework')->uploadNewLogo() != ""): ?> 
+	background:url("<?php echo Mage::getBaseUrl('media')."wysiwyg"."/"."megnor"."/" . $this->helper('framework')->uploadNewLogo() ?>") no-repeat scroll 0 0 transparent;	
+<?php endif; ?>
+text-indent: -9999px;
+}
+
+.sale-label
+{
+<?php if($this->helper('framework')->uploadSaleLogo() != ""): ?> 
+background:url("<?php echo Mage::getBaseUrl('media')."wysiwyg"."/"."megnor"."/" . $this->helper('framework')->uploadSaleLogo() ?>") no-repeat scroll 0 0 transparent;
+<?php endif; ?>
+text-indent: -9999px;
+}
+#to_top 
+{
+<?php if($this->helper('framework')->uploadtoptobottombutton() != ""): ?> 
+background:url("<?php echo Mage::getBaseUrl('media')."wysiwyg"."/"."megnor"."/" . $this->helper('framework')->uploadtoptobottombutton() ?>") no-repeat scroll 0 0 transparent;
+<?php endif; ?>
+}
+
+</style>

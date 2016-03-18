@@ -1,0 +1,73 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php 
+/**
+ * Store switcher template
+ *
+ * @see Mage_Core_Block_Store_Switcher
+ */
+?>
+
+<script type="text/javascript">
+var $z=jQuery.noConflict();
+$z(document).ready(function(){		
+		$z('#select-label').click(function(){
+				if($z(this).hasClass('inactive')) {
+						$z(this).removeClass('inactive');
+						$z(this).addClass('active');
+						$z('.store-layout').animate({left:'-292px'}, 500);
+				} else {
+						$z(this).addClass('inactive');
+						$z('.store-layout').animate({left:'0'}, 500);
+				}
+		});
+ 
+});
+</script>
+<?php if(count($this->getGroups())>1): ?>
+<div class="store-layout">
+<div class="store-label"><label id="select-label" for="select-store">&nbsp;</label></div>
+<div class="store-switcher">
+	<div class="title"><h1><?php echo $this->__('Select Store View')?></h1></div>
+	 <?php foreach ($this->getGroups() as $_group): ?>
+	 	<?php 
+		$current = $_group->getHomeUrl();
+		
+		if($current == ""){
+		 ?>
+        <a href="<?php echo $_group->getHomeUrl() ?>" style="display:none;"><p class="storename"><?php echo $this->htmlEscape($_group->getName()) ?></p></a>
+<?php }
+else {?>
+<a href="<?php echo $_group->getHomeUrl() ?>"><img src="<?php echo $this->getSkinUrl('images/img_' . $this->htmlEscape($_group->getName()) . '.jpg') ?>" alt="<?php echo $this->htmlEscape($_group->getName()) ?>"/><p class="storename"><?php echo $this->htmlEscape($_group->getName()) ?></p></a>
+    <?php } ?>	
+
+    <?php endforeach; ?>	
+</div>
+</div>
+<?php endif; ?>
+
+        

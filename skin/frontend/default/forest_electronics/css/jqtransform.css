@@ -1,0 +1,192 @@
+/* -------------
+ * Selects
+ * ------------- */
+/*.jqTransformSelectWrapper {
+   background-clip: padding-box;
+    background-color: #FFFFFF;
+    background-image: linear-gradient(#FFFFFF 20%, #F6F6F6 50%, #EEEEEE 52%, #F4F4F4 100%);
+    border: 1px solid #AAAAAA;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 0 3px #FFFFFF inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: #444444;
+    display: block;
+    height: 23px;
+    line-height: 24px;
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap;
+	display:inline-block;
+	position: relative;
+	width:193px;
+	top:0px;
+	float:left;
+}
+
+
+.jqTransformSelectWrapper div span {
+	font-size: 12px;
+	float: none;
+	position: absolute;
+	white-space: nowrap;
+	height: 18px;
+	line-height: 15px;
+	padding: 5px 0 0 7px;
+	overflow: hidden;
+	cursor:pointer;
+	color:#333;
+}
+
+.jqTransformSelectWrapper  a.jqTransformSelectOpen {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #000000;
+    content: "";
+    display: inline-block;
+    margin: 0;
+    vertical-align: top;
+    width: 0;
+    position: absolute;
+    right: 6px;
+    top: 10px;
+	display: block;
+}
+
+.jqTransformSelectWrapper ul {
+	position: absolute;
+	width: 43px;
+	top: 30px;
+	left: 0px;
+	list-style: none;
+	background-color: #FFF;
+	border: solid 1px #CCC;
+	display: none;
+	margin: 0px;
+	padding: 0px;
+	height: 150px;
+	overflow: auto;
+	overflow-y: auto;
+	z-index:10;
+}
+
+.jqTransformSelectWrapper ul a {
+	display: block;
+	padding: 5px;
+	text-decoration: none;
+	color:#333;
+	background-color: #FFF;
+	font-size: 12px;
+}
+
+.jqTransformSelectWrapper ul a.selected {
+	background: #EDEDED;
+	color: #333;
+}
+
+.jqTransformSelectWrapper ul a:hover, .jqTransformSelectWrapper ul a.selected:hover {
+	background:#EBEBEB;
+	color: #000;
+}
+.jqTransformHidden {display: none;}*/
+
+
+
+
+/*================================== New Css =========================*/
+.jqTransformSelectWrapper {
+  /* background-clip: padding-box;
+    background-color: #FFFFFF;
+    background-image: linear-gradient(#FFFFFF 20%, #F6F6F6 50%, #EEEEEE 52%, #F4F4F4 100%);
+    border: 1px solid #AAAAAA;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 0 3px #FFFFFF inset, 0 1px 1px rgba(0, 0, 0, 0.1);*/
+	border:1px solid #DDDDDD;
+	background:none #FFF;
+    color: #444444;
+    display: block;
+    height: 23px;
+    line-height: 24px;
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap;
+	display:inline-block;
+	position: relative;
+	width:193px;
+	top:0px;
+	float:left;
+}
+
+
+.jqTransformSelectWrapper div span {
+	font-size: 11px;
+	float: none;
+	position: absolute;
+	white-space: nowrap;
+	height: 18px;
+	line-height: 15px;
+	padding: 5px 0 0 7px;
+	overflow: hidden;
+	cursor:pointer;
+	color:#2F2F2F;
+}
+
+.jqTransformSelectWrapper  a.jqTransformSelectOpen {
+     background: url("../images/sprite.png") no-repeat scroll 0 0 transparent;
+    border-left: 1px solid #DDDDDD;
+    display: block;
+    height: 13px;
+    margin: 0;
+    padding: 6px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    vertical-align: top;
+    width: 2px;
+}
+
+.jqTransformSelectWrapper ul {
+	position: absolute;
+	width: 43px;
+	left:0;
+	top: 25px;
+	list-style: none;
+	background-color: #FFF;
+	border: solid 1px #DDDDDD;
+	display: none;
+	margin: 0px;
+	padding: 0px;
+	height: 150px;
+	overflow: auto;
+	overflow-y: auto;
+	z-index:10;
+}
+
+.jqTransformSelectWrapper ul a {
+	display: block;
+	padding:2px 5px;
+	text-decoration: none;
+	color:#333;
+	background-color: #FFF;
+	font-size: 11px;
+}
+
+.jqTransformSelectWrapper ul a.selected {
+	background: #F7F6F1;
+	color: #D8787A;
+	font-weight:normal !important;
+}
+
+.jqTransformSelectWrapper ul a:hover, .jqTransformSelectWrapper ul a.selected:hover {
+	background:#F7F6F1;
+	color: #D8787A;
+}
+.jqTransformHidden {display: none;}
+
+.header_top .page_inner .jqTransformSelectWrapper	
+{
+	background:none; border:none;
+}
+.tm_top_currency .jqTransformSelectWrapper,.tm_top_currency .jqTransformSelectWrapper SPAN	{ width:170px !important; background:#FFFEF6; border:1px solid #DED9CA;}
+ 
+
+.form-language .jqTransformSelectWrapper,.form-language .jqTransformSelectWrapper SPAN	{ width:85px !important;}
+ 

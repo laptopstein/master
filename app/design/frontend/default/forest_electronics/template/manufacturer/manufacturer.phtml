@@ -1,0 +1,27 @@
+<?php
+$maufacturers = Mage::getModel('manufacturer/manufacturer')->getCollection()->addFieldToFilter('status',Array('eq'=>1));    
+?>
+<div class="manufacturer-list">
+	<ul class="products-grid">
+	<?php foreach($maufacturers as $manufacturer): ?>
+	
+		<?php if(Mage::getModel('eav/entity_attribute_source_table')->setAttribute(Mage::getModel('eav/entity_attribute')->load(Mage::getModel('eav/entity_attribute')->getIdByCode('catalog_product', Mage::getStoreConfig('manufacturer/general/attribute_code'))))->getOptionText($manufacturer->getManufacturerName())): ?>			
+		<li class="item">
+
+					<a href="<?php echo $manufacturer->getUrl();?>">
+						<?php echo $this->getLayout()->createBlock('core/template')->setmanufacturerimage($manufacturer->getFilename())->setListPageFlag(1)->setTemplate('manufacturer/manufacturer_resize.phtml')->toHtml(); ?>
+					</a>
+					
+					<?php if($this->displayName()):?>
+					<div class="manufacturer-name">
+						<a href="<?php echo $manufacturer->getUrl(); ?>">  <?php echo Mage::getModel('eav/entity_attribute_source_table')->setAttribute(Mage::getModel('eav/entity_attribute')->load(Mage::getModel('eav/entity_attribute')->getIdByCode('catalog_product', Mage::getStoreConfig('manufacturer/general/attribute_code'))))->getOptionText($manufacturer->getManufacturerName()) ?>
+						</a>
+					</div>
+					<?php endif; ?>
+		 </li>			
+	
+		<?php endif; ?>
+		 
+	<?php endforeach; ?>
+	</ul>
+</div>

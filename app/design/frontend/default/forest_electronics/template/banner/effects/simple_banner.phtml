@@ -1,0 +1,50 @@
+<?php
+/**
+ * Unicode Systems
+ * @category   Uni
+ * @package    Uni_Banner
+ * @copyright  Copyright (c) 2010-2011 Unicode Systems. (http://www.unicodesystems.in)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+$bannerGroupCode = $this->getBannerGroupCode();
+$data = $this->getDataByGroupCode($bannerGroupCode);
+$bannerGroupData = $data['group_data'];
+$mediaDir = Mage::getBaseDir('media');
+$bannerData = $data['banner_data'];
+$bannerdest = (($bannerGroupData->getLinkTarget() == 0) ? '_blank' : '_self');
+$bannerType = $bannerGroupData->getAnimationType();
+$bannerWidth = $bannerGroupData->getBannerWidth();
+$bannerHeight = $bannerGroupData->getBannerHeight();
+$imageWidth = ((int) $bannerWidth - 3);
+$imageHeight = ((int) $bannerHeight - 3);
+$styleBWH = 'width: ' . $bannerWidth . 'px; height: ' . $bannerHeight . 'px;';
+$duration = Mage::getStoreConfig('banner/banner/banner_time_delay');
+$durat = $duration / 1000;
+?>
+<div id="no_effect" class="block ">
+<?php
+$i = 0;
+foreach ($bannerData as $banner):
+    $bannerPath = $banner->getFilename();
+    $bannerType = $banner->getBannerType();
+    if ($bannerType == 0) :
+        $bannerImage = '';
+        if ($bannerPath != '' && @file_exists($mediaDir . DS . $bannerPath)) :
+            $bannerImage = $this->getResizeImage($bannerPath, $bannerGroupCode, $imageWidth, $imageHeight);
+        endif;
+        $bannerTitle = $banner->getTitle();
+        $bannerContent = $banner->getBannerContent();
+        $bannerLink = $banner->getLink();
+        if ($bannerImage != '') :
+            $i++;
+            $v = "banner" . $i;
+?>
+            <a class="<?php echo $v;?>" href="<?php echo (($bannerLink) ? $bannerLink : 'javascript:'); ?>" <?php echo (($bannerLink)?'target="'.$bannerdest.'"':''); ?> title="<?php echo $bannerTitle; ?>"><img id="<?php echo $v; ?>" class="trans-banner-img" src="<?php echo $bannerImage; ?>" alt="<?php echo $bannerTitle; ?>" /></a>
+<?php
+            endif;
+        endif;
+    endforeach; ?>
+
+</div>

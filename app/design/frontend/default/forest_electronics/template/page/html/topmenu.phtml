@@ -1,0 +1,98 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @see Mage_Page_Block_Html_Topmenu
+ */
+?>
+<?php /*?><script>
+  var $ff = jQuery.noConflict(); 
+  $ff(document).ready(function(){
+    $ff(".nav-button").click(function () {
+    $ff(".nav-button,.primary-nav").toggleClass("open");
+  }); 
+  });
+</script> <?php */?> 
+<script>
+jQuery(function($){
+  $("button.nav-button").click(function(){
+   $("#responsive_menuinner").slideToggle(500);
+   $("button.nav-button").toggleClass("down_arrow");
+  });
+});
+</script>
+
+
+<?php $_menu = $this->getHtml('level-top') ?>
+<?php if($_menu): ?>
+<nav class="nav-container" role="navigation">
+	<div class="page_inner">
+		<ul id="nav">
+			<?php echo $_menu ?>
+			<!-- ================= Start Extra Link ===========-->
+		<?php if($this->helper('framework')->getcustomemenulink()):?>
+			<?php 
+				$name1 = $this->helper('framework')->getcustomemenulink1();
+				$identifier1 = $this->helper('framework')->getcustomemenulinkidentifier1();
+				
+				$name2 = $this->helper('framework')->getcustomemenulink2();
+				$identifier2 = $this->helper('framework')->getcustomemenulinkidentifier2();
+				
+				$name3 = $this->helper('framework')->getcustomemenulink3();
+				$identifier3 = $this->helper('framework')->getcustomemenulinkidentifier3();
+				
+			?>
+		<?php if($name1 != ''){ ?><li><a href="<?php echo $this->getUrl($identifier1)?>"><span><?php echo $this->__($name1) ?></span></a></li><?php } ?>
+		<?php if($name2 != ''){ ?><li><a href="<?php echo $this->getUrl($identifier2)?>"><span><?php echo $this->__($name2) ?></span></a></li><?php } ?>
+		<?php if($name3 != ''){ ?><li><a href="<?php echo $this->getUrl($identifier3)?>"><span><?php echo $this->__($name3) ?></span></a></li><?php } ?>
+			
+		<?php endif?>
+		<!-- ================= End Extra Link ===========-->
+			
+		</ul>
+		
+	</div>	
+</nav>
+<?php endif ?>
+
+
+<?php $_menu = $this->getHtml('level-top') ?>
+<?php if($_menu): ?>
+<nav class="nav-container1">
+	<button class="nav-button main-but">
+		Menu
+	<span class="right_bullet"></span>	
+	</button>
+	<div id="responsive_menuinner">
+		<ul id="topnav" class="primary-nav">
+			<?php echo $_menu ?>
+		</ul>
+	</div>
+</nav> 
+<?php endif ?>

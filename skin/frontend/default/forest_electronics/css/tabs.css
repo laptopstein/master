@@ -1,0 +1,122 @@
+/*--------------------------------------------------
+  REQUIRED to hide the non-active tab content.
+  But do not hide them in the print stylesheet!
+  --------------------------------------------------*/
+.tabberlive .tabbertabhide {
+ display:none;
+}
+
+.tabber {
+}
+.tabberlive {
+  float: left;
+    margin: 1em 0;
+    width: 100%;
+	
+}
+
+ul.tabbernav
+{
+ margin:0 0 15px 0 !important;
+ padding: 6px 0 3px !important;
+ background:url(../images/tobbottom_line.png) repeat-x left bottom  ;
+ font: bold 12px Verdana, sans-serif;
+ height:28px;
+}
+
+ul.tabbernav li
+{   margin-right: 5px;
+	list-style: none;
+	padding: 10px 0 7px;
+	display: inline;
+	    box-shadow: 0 0 2px #DDDDDD;
+	
+ }
+
+.content { padding:0; }
+
+ul.tabbernav li a
+{
+ 	padding: 6px 14px 4px 4px;
+ 	margin-right:0px;
+ 	text-decoration: none;
+ 	font-family: 'Andika',sans-serif;
+ 	font-size: 15px;
+    font-weight: normal;
+	 color:#646464;
+	 	background:#fff;
+}
+
+ul.tabbernav li a:hover
+{
+ text-decoration: none;
+}
+
+ul.tabbernav li a:link {     
+border-bottom: medium none;
+padding:3px 11px 4px;
+text-decoration: none;
+
+ border-left:1px solid #DDDDDD;
+		border-right:1px solid #DDDDDD;
+			border-top:1px solid #DDDDDD;
+	
+	}
+ul.tabbernav li a.selected , ul.tabbernav li a:hover	{ background:#551B01;  color:#FFFFFF !important;}
+ul.tabbernav li a:visited { color: #667; }
+ul.tabbernav li:hover {background:url(../images/left_tabs_hover.png) no-repeat left center;}
+ul.tabbernav li:hover a
+{
+background:#551B01;
+color:#fff;
+}
+
+ul.tabbernav li.tabberactive
+{
+	background:url(../images/left_tabs_hover.png) no-repeat left center;
+	background-color: #FFFFFF;
+}
+
+ul.tabbernav li.tabberactive a
+{
+background:url(../images/right_tabs_hover.png) repeat-x right center;
+color:#fff;
+}
+
+ul.tabbernav li.tabberactive a:hover
+{ 
+/* background-color: #fff;
+ border-bottom: 1px solid #fff !important;*/
+ 
+}
+
+.tabberlive .tabbertab {
+	padding-bottom: 5px;
+	border-top:0; 
+	float:left;
+	width:1000px; 
+	background:url(../images/tobbottom_line.png) repeat-x left bottom;
+}
+
+.tabberlive .tabbertab ul{ margin:0px !important; overflow:hidden; }
+.tabberlive .add-to-links { float:left;  font-family: Arial; border:1px dotted #DFDAC1; padding:5px;  width:218px; }
+/* If desired, hide the heading since a heading is provided by the tab */
+.tabberlive .tabbertab h2 {
+ display:none;
+}
+.tabberlive .tabbertab h3 {
+ display:none;
+}
+
+/* Example of using an ID to set different styles for the tabs on the page */
+.tabberlive#tab1 {
+}
+.tabberlive#tab2 {
+}
+.tabberlive#tab2 .tabbertab {
+ height:200px;
+ overflow:auto;
+}
+
+.tabs  .page-title {display:none; }
+ 

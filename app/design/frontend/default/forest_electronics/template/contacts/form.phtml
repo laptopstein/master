@@ -1,0 +1,128 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<div class="page-title">
+    <h1><?php echo Mage::helper('contacts')->__('Contact Us') ?></h1>
+</div>
+
+<form action="<?php echo $this->getFormAction(); ?>" id="contactForm" method="post">
+    <div class="fieldset">
+        <h2 class="legend"><?php echo Mage::helper('contacts')->__('Contact Information') ?></h2>
+        <ul class="form-list">
+            <li class="fields">
+                <div class="field">
+                    <label for="name" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Name') ?></label>
+                    <div class="input-box">
+                        <input name="name" id="name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="<?php echo $this->htmlEscape($this->helper('contacts')->getUserName()) ?>" class="input-text required-entry" type="text" />
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="email" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Email') ?></label>
+                    <div class="input-box">
+                        <input name="email" id="email" title="<?php echo Mage::helper('contacts')->__('Email') ?>" value="<?php echo $this->htmlEscape($this->helper('contacts')->getUserEmail()) ?>" class="input-text required-entry validate-email" type="text" />
+                    </div>
+                </div>
+            </li>
+            <li>
+                <label for="telephone"><?php echo Mage::helper('contacts')->__('Telephone') ?></label>
+                <div class="input-box">
+                    <input name="telephone" id="telephone" title="<?php echo Mage::helper('contacts')->__('Telephone') ?>" value="" class="input-text" type="text" />
+                </div>
+            </li>
+            <li class="wide">
+                <label for="comment" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Comment') ?></label>
+                <div class="input-box">
+                    <textarea name="comment" id="comment" title="<?php echo Mage::helper('contacts')->__('Comment') ?>" class="required-entry input-text" cols="5" rows="3"></textarea>
+                </div>
+            </li>
+        </ul>
+    </div>
+	<!-- Capcha -->
+	 <script type="text/javascript"
+     src="http://www.google.com/recaptcha/api/challenge?k=6LcukPESAAAAAMZI8Fnvs4aFhKgv6EdlmlKW6HL6 ">
+  </script>
+  <noscript>
+     <iframe src="http://www.google.com/recaptcha/api/noscript?k=6LcukPESAAAAAMZI8Fnvs4aFhKgv6EdlmlKW6HL6 "
+         height="300" width="500" frameborder="0"></iframe><br>
+     <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+     </textarea>
+     <input type="hidden" name="recaptcha_response_field"
+         value="manual_challenge">
+  </noscript>
+	<!-- end Capcha -->
+	       <div class="contactbutton"><button type="submit" title="<?php echo Mage::helper('contacts')->__('Submit') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Submit') ?></span></span></button>
+	        </div>
+    <div class="buttons-set">
+        <p class="required"><?php echo Mage::helper('contacts')->__('* Required Fields') ?></p>
+        <input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
+   </div>
+</form>
+<div class="std">
+<div class="contact"><h1>Despre Noi</h1></div>
+
+<p>Cu cei peste 10 ani de experienta, putem afirma ca suntem un provider de nivel national si interntional. Avem competenta de a oferi suport tehnic specizat bazat pe experienta proprie. Comercializam echipamente testate si verificate de noi in service-ul propriu, utilizate de catre tehnicienii nostri. Te asiguram in felul acesta ca echipamentele pe care ti le propunem sunt de calitate superioara, putand fi utilizate cu o rata maxima de succes in service-ul tau, la fel cum au functionat sau functioneaza si in service-ul nostru.
+
+Asiguram service la sediul nostru pentru echipamentele comercializate.
+
+Suntem si importatori directi pentru unelte si tehnologie de interventie pentru service-uri IT. Comercializam roboti de reballing/rework, bai de ultrasunete, echipamente de masura si control, microscoape tehnologice digitale, consumabile si accesorii, etc.
+
+Suntem totodata service autorizat pentru laptop-uri Acer in garantie, indiferent daca aceste laptop-uri au fost cumparate de la noi sau din alta parte. Suntem specializati de asemenea pe Apple, fiind unul din putinele service-uri care pot repara cu succes aceasta categorie de portabile.
+
+Suntem pregatiti sa te ajutam in deschiderea afacerii tale de la A la Z, incluzand cand este cazul chiar si urmarea unui curs de specialitate pentru electronisti impreuna cu tehnicienii nostri.</p>
+<p>&nbsp;</p>
+ <h1> SCIT TEHNOLOGY SRL</h1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td> 
+      <p><span style="font-size: medium;"><strong style="color:#900; text-transform:uppercase;">Date fiscale:</strong></span></p>
+  <p><span style="font-size: medium;">CUI RO25643222</span> / <span style="font-size: medium;">Nr. R.C. J12/1214/2009</span></p>
+  <p><span style="font-size: medium;">Cluj-Napoca, Calea Motilor 43/5</span></p>
+  <p><span style="font-size: medium;">Capital Social 200 RON</span></p></td>
+    <td><p><span style="font-size: medium;"><strong style="color:#900; text-transform:uppercase;">Telefon:</strong></span></p>
+<p><span style="font-size: medium;">Fix: +40 264 59.00.22</span></p>
+<p><span style="font-size: medium;">Orange: +40 755 52.22.38</span></p>
+<p><span style="font-size: medium;">Vodafone: +40 728 56.68.58</span></p></td>
+    <td><p><span style="font-size: medium;"><strong style="color:#900; text-transform:uppercase;">Program:</strong></span></p>
+<p><span style="font-size: medium;">L-J: 9.00-19.00</span></p>
+<p><span style="font-size: medium;">V: 9.00-16.00</span></p>
+<p><span style="font-size: medium;">S-D: Inchis</span></p></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+<div class="google-maps">
+<iframe width="940" height="540" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ro/maps?f=q&amp;source=s_q&amp;hl=ro&amp;geocode=&amp;q=LaptopShop&amp;aq=&amp;sll=46.77337,23.612344&amp;sspn=0.18905,0.528374&amp;ie=UTF8&amp;hq=LaptopShop&amp;hnear=&amp;t=m&amp;cid=6856274820466867462&amp;ll=46.768616,23.57739&amp;spn=0.016167,0.028453&amp;z=15&amp;iwloc=A&amp;output=embed">
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</iframe>
+<br /><small><a href="https://maps.google.ro/maps?f=q&amp;source=embed&amp;hl=ro&amp;geocode=&amp;q=LaptopShop&amp;aq=&amp;sll=46.77337,23.612344&amp;sspn=0.18905,0.528374&amp;ie=UTF8&amp;hq=LaptopShop&amp;hnear=&amp;t=m&amp;cid=6856274820466867462&amp;ll=46.768616,23.57739&amp;spn=0.016167,0.028453&amp;z=15&amp;iwloc=A" style="color:#0000FF;text-align:left">Vizualizare hartă mărită</a></small></div>
+<script type="text/javascript">
+//<![CDATA[
+    var contactForm = new VarienForm('contactForm', true);
+//]]>
+</script>

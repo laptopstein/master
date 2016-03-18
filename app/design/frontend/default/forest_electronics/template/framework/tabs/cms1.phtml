@@ -1,0 +1,14 @@
+<?php
+/**
+ * TemplateMela
+ * @copyright  Copyright (c) 2010 TemplateMela. (http://www.templatemela.com)
+ * @license    http://www.templatemela.com/license/
+ */
+ 
+?>
+<?php
+$cmsblockid = Mage::getStoreConfig('template_settings/products_info_page/cms_tab_block1');
+if(!empty($cmsblockid)){
+		echo '<div class="product-specs">'.$this->getLayout()->createBlock('cms/block')->setBlockId($cmsblockid)->toHtml().'</div>';
+}
+?>

@@ -1,0 +1,192 @@
+<?php
+/**
+ * TemplateMela
+ * @copyright  Copyright (c) 2010 TemplateMela. (http://www.templatemela.com)
+ * @license    http://www.templatemela.com/license/
+ */
+?>
+
+<?php if($this->helper('framework')->getTemplateshowcontrolpanel() == 0 ):?>
+<script type="text/javascript">
+(function($){
+	var initLayout = function() {
+	jQuery('#tm-control-panel a.tm-panel-item').click(function(){						
+		var tm_texture_value = jQuery(this).attr('id'), tm_theme_path = '<?php echo $this->getSkinUrl(); ?>';
+		jQuery('#mainbody').css('backgroundImage', 'url(' + tm_theme_path + '/images/colorpicker/patterns/' + tm_texture_value + '.png)' );
+		jQuery('#mainbody').css('background-repeat', 'repeat' );
+	});
+	};
+	EYE.register(initLayout, 'init');
+})(jQuery)
+</script>
+
+<div id="tm-control-panel">
+		<div id="tm-panel-container">
+			<div class="tm-panel-bg">
+				<a  id="tm-panel-switch"></a>
+	
+				<div id="tm-panel-inner">
+				<div class="tm-panel-title-main">
+				<span class="main-title">Theme Settings</span></div>
+				<form id="panel_form" method="post">
+					<div class="tm-panel-block">
+						<div class="tm-panel-title-back">Background Color</div>
+						
+						<div class="tm-panel-colorpicker">
+							<input type="text" style="background-color:#767676" name="tm-panel-bkgcolor" class="tm-item" id="tm-panel-bkgcolor">
+						</div>
+					</div>				
+					
+				<!--	
+					<div class="tm-panel-block">
+						<div class="tm-panel-title-back">Change Color Scheme</div>
+						<div class="tm-panel-colorpicker">
+							<input type="text" style="background-color:#767676" name="tm-panel-colorscheme-color" class="tm-item" id="tm-panel-colorscheme-color">
+						</div>
+					</div>
+					-->
+					
+					<div class="tm-panel-block">
+						<div class="tm-panel-title-text-back">Background Texture</div>
+						<div class="clear"></div>
+                            <a title="body-bg1" href="#" class="tm-panel-item" id="body-bg1"></a>
+                            <a title="body-bg2" href="#" class="tm-panel-item" id="body-bg2"></a>
+                            <a title="body-bg3" href="#" class="tm-panel-item" id="body-bg3"></a>
+                            <a title="body-bg4" href="#" class="tm-panel-item" id="body-bg4"></a>
+                            <a title="body-bg5" href="#" class="tm-panel-item" id="body-bg5"></a>
+                            <a title="body-bg6" href="#" class="tm-panel-item" id="body-bg6"></a>
+                            <a title="body-bg7" href="#" class="tm-panel-item" id="body-bg7"></a>
+                            <a title="body-bg8" href="#" class="tm-panel-item" id="body-bg8"></a>
+                            <a title="body-bg9" href="#" class="tm-panel-item" id="body-bg9"></a>
+                            <a title="body-bg10" href="#" class="tm-panel-item" id="body-bg10"></a>
+                            <a title="body-bg11" href="#" class="tm-panel-item" id="body-bg11"></a>
+                            <a title="body-bg12" href="#" class="tm-panel-item" id="body-bg12"></a>
+                            <a title="body-bg13" href="#" class="tm-panel-item" id="body-bg13"></a>
+                            <a title="body-bg14" href="#" class="tm-panel-item" id="body-bg14"></a>
+                            <a title="body-bg15" href="#" class="tm-panel-item" id="body-bg15"></a>
+                            <a title="body-bg16" href="#" class="tm-panel-item" id="body-bg16"></a>
+                            <a title="body-bg17" href="#" class="tm-panel-item" id="body-bg17"></a>
+                            <a title="body-bg18" href="#" class="tm-panel-item" id="body-bg18"></a>
+				</div>
+						
+						
+						
+					
+						
+					<div class="tm-panel-block">
+						<div class="tm-panel-title">Body font</div>
+												<div class="tm-panel-colorpicker">
+							<input type="text" style="background-color:#8D8D8D" name="tm-panel-body-font-color" class="tm-item" id="tm-panel-body-font-color">
+						</div>
+										
+						<select id="tm-panel-body-font" name="tm-panel-body-font">
+                            <option value="Bitter">Bitter</option>
+                            <option value="Contrail One">Contrail One</option>
+                            <option value="Carter One">Carter One</option>
+                            <option value="Lora">Lora</option>
+                            <option value="Abel">Abel</option>
+                            <option value="Telex">Telex</option>
+                            <option value="Adamina">Adamina</option>
+                            <option value="Alegreya">Alegreya</option>
+                            <option value="Amaranth">Amaranth</option>
+                            <option value="Antic">Antic</option>
+                            <option value="Asap">Asap</option>
+                            <option value="Asul">Asul</option>
+                            <option value="Cabin">Cabin</option>
+                            <option value="Capriola">Capriola</option>
+                            <option value="Chivo">Chivo</option>
+                            <option value="Cinzel">Cinzel</option>
+                            <option value="Delius">Delius</option>
+                            <option value="Galdeano">Galdeano</option>
+                            <option value="Iceberg">Iceberg</option>
+                            <option value="Imprima">Imprima</option>
+                            <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
+                            <option value="Trocchi">Trocchi</option>
+                            <option value="Open Sans">Open Sans</option>
+                            <option value="Droid Sans">Droid Sans</option>
+                            <option value="Oswald">Oswald</option>
+                            <option value="Courgette">Courgette</option>
+                            <option value="Petit Formal Script">Petit Formal Script</option>
+                            <option value="Duru Sans">Duru Sans</option>
+                            <option value="Electrolize">Electrolize</option>
+                            <option value="Signika">Signika</option>
+                            <option value="Dancing Script">Dancing Script</option>
+						</select>
+					</div>	
+					
+					
+					
+					<div class="tm-panel-block">
+						<div class="tm-panel-title">Navigation <br/> font</div>
+												<div class="tm-panel-colorpicker">
+							<input type="text" style="background-color:#333333" name="tm-panel-nav-font-color" class="tm-item" id="tm-panel-nav-font-color">
+						</div>
+											
+						<select id="tm-panel-nav-font" name="tm-panel-nav-font">
+                                <option value="Bitter">Bitter</option>
+                                <option value="Contrail One">Contrail One</option>
+                                <option value="Carter One">Carter One</option>
+                                <option value="Lora">Lora</option>
+                                <option value="Abel">Abel</option>
+                                <option value="Telex">Telex</option>
+                                <option value="Adamina">Adamina</option>
+                                <option value="Alegreya">Alegreya</option>
+                                <option value="Amaranth">Amaranth</option>
+                                <option value="Antic">Antic</option>
+                                <option value="Asap">Asap</option>
+                                <option value="Asul">Asul</option>
+                                <option value="Cabin">Cabin</option>
+                                <option value="Capriola">Capriola</option>
+                                <option value="Chivo">Chivo</option>
+                                <option value="Cinzel">Cinzel</option>
+                                <option value="Delius">Delius</option>
+                                <option value="Galdeano">Galdeano</option>
+                                <option value="Iceberg">Iceberg</option>
+                                <option value="Imprima">Imprima</option>
+                                <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
+                                <option value="Trocchi">Trocchi</option>
+                                <option selected="selected" value="Open Sans">Open Sans</option>
+                                <option value="Droid Sans">Droid Sans</option>
+                                <option value="Oswald">Oswald</option>
+                                <option value="Courgette">Courgette</option>
+                                <option value="Petit Formal Script">Petit Formal Script</option>
+                                <option value="Duru Sans">Duru Sans</option>
+                                <option value="Electrolize">Electrolize</option>
+                                <option value="Signika">Signika</option>
+                                <option value="Dancing Script">Dancing Script</option>
+					</select>
+					</div>
+					
+					<div class="tm-panel-block">
+						<div class="tm-panel-title">Link Color</div>
+												<div class="tm-panel-colorpicker">
+							<input type="text" style="background-color:#767676" name="tm-panel-linkcolor" class="tm-item" id="tm-panel-linkcolor">
+						</div>
+					</div>
+										
+					<div class="tm-panel-block">
+						<div class="tm-panel-title-back">Footer Link Color</div>
+												<div class="tm-panel-colorpicker">
+							<input type="text" style="background-color:#E3E3E3" name="tm-panel-footercolor" class="tm-item" id="tm-panel-footercolor">
+						</div>
+					</div>
+					<div class="more-set">
+					<a href="http://www.templatemela.com/framework/settings.php?platform=magento" style="color:#000; font-size:12px;" target="_blank">
+					See more settings in admin panel</a>
+					</div>
+					<div class="panel-over">
+					
+					
+				
+				</div>
+				</form>
+				</div>
+				</div>
+				
+		</div>
+</div>
+
+
+
+
+<?php endif ?>

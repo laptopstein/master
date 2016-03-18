@@ -1,0 +1,155 @@
+<?php
+/**
+ * TemplateMela
+ * @copyright  Copyright (c) 2010 TemplateMela. (http://www.templatemela.com)
+ * @license    http://www.templatemela.com/license/
+ */
+ 
+?>
+<?php
+    $_productCollection=$this->getLoadedProductCollection();
+    $_helper = $this->helper('catalog/output');
+?>
+
+<?php if(!$_productCollection->count()): ?>
+<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php else: ?>
+<article class="hotdeal-products homepage_productgrid">
+<div class="spinner"></div>
+ <script>
+// Best Sellar Product
+var $h=jQuery.noConflict();
+  $h(document).ready(function() {
+    $h('#hotdealCarousel').jcarousel({
+      scroll: 1,
+      animation: 1200,
+      auto: 0
+    });
+  });
+</script> 
+ 
+		<ul class="jcarousel-skin" id="hotdealCarousel" >
+    <?php $i=0; foreach ($_productCollection as $_product):  $i++;?>
+
+            <li class="hproduct grid-item item">
+				<div class="homegrid_inner">
+				 <h2 class="fn product-name" ><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2>
+				
+				
+				<div class="product_back">
+				<div  class="product_iner">
+				
+				<?php if($this->helper('framework')->isNewProduct($_product)):?>
+					<div class="new-label"><?php echo $this->__('New Label') ?></div>
+				<?php endif; ?>
+				
+				<?php if($this->helper('framework')->isSpecialProduct($_product)):?>
+					<div class="sale-label"><?php echo $this->__('Sale Label') ?></div>
+				<?php endif; ?>	
+				
+				 
+                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image url">				
+				<?php if($this->helper('framework')->getAspectRatio()):?>				
+					<img class="photo fn" src="<?php echo $this->helper('adaptiveResize/image')->init($_product, 'small_image')->setCropPosition('top')->adaptiveResize(200,240); ?>" width="200" height="240" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+				<?php else:	?>	
+					<img class="photo fn" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(230,290); ?>" width="230" height="290" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />			
+				<?php endif; ?>					
+				</a>
+				
+
+				</div>
+				</div>
+				
+               
+				
+				 <div class="price_rating">
+				 <?php echo $this->getPriceHtml($_product, true) ?>
+				 <?php if($_product->getRatingSummary()): ?>
+						<div class="description grid_rating">
+							<?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+						</div>
+					<?php endif; ?>
+				</div>	
+				<!-- =========== End Review and Rating ========= -->
+			   
+                    <?php if($_product->isSaleable()): ?>
+					<div class="actions">
+                        <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                    <?php else: ?>
+                        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+						</div>
+                    <?php endif; ?>
+					 
+					
+				<!-- =========== Start Review and Rating ========= -->
+			 
+				<?php echo $this->helper('framework')->getProductAttribute($_product, $_product->_data['short_description']);?>
+			  </div>
+            </li>
+
+        <?php endforeach ?>
+ 
+        </ul>
+  
+</article>
+<?php endif; ?>
+
+<?php 
+$fixCol = 3;
+$column = $this->helper('framework')->getProductPerRow(); 
+$html = '';
+if($fixCol > $column ){		
+	$nCol = $fixCol - $column; 	
+	$html.='-'.$nCol;
+}	
+else if($fixCol < $column ){
+	$nCol = $column - $fixCol;
+	$html.='+'.$nCol;	
+}
+
+?>
+
+ <script type="text/javascript">
+	 function smartRowsColumns($) { 
+		$("ul.products-grid").css({ 'width' : "100%"});
+		var colWrap = $("ul.products-grid").width(); 
+		var curMargin = parseInt($("ul.products-grid li.item .product-block").css("margin-left"));
+		var curWidth = 226;  // 256 is default width minus Margins
+		var colNum = Math.floor(colWrap / curWidth)<?php echo $html;?>; 
+		var colFixed = Math.floor(colWrap / colNum); 
+		$("ul.products-grid").css({ 'width' : colWrap});
+		$("ul.products-grid li.item").css({ 'width' : colFixed}); 
+		
+		if ($(window).width() >= 480)
+		{
+			var colMaxHeight = 0;
+			$('.products-grid .item').each(function() {
+				//$(this).css("height", "auto");
+				colMaxHeight = Math.max(colMaxHeight, $(this).height());
+			});
+			$('.products-grid .item').css("height", colMaxHeight + "px");
+			$('.products-grid .item .product-block').css("height", colMaxHeight + "px");
+			
+		}
+		else
+		{
+			$('.products-grid .item').css("height", "auto");
+			$('.products-grid .item .product-block').css("height", "auto");
+			//$('.products-grid .item').css("height", colFixed + "px");
+			//$('.products-grid .item .product-block').css("height", colFixed + "px");
+		}
+		
+	 }
+	jQuery(function($) {
+		$(window).resize(function() {
+			smartRowsColumns($);
+			
+		});
+	}); 
+	jQuery(window).load(function(){
+		smartRowsColumns(jQuery);
+	}); 
+	
+	
+ 
+</script>

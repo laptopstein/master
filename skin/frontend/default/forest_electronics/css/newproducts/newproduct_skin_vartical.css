@@ -1,0 +1,185 @@
+#newproduct_slider .jcarousel-container {
+  
+}
+
+#newproduct_slider .jcarousel-direction-rtl {
+	direction: rtl;
+}
+
+#newproduct_slider.jcarousel-container-horizontal {
+    width: 245px;
+    padding: 20px 40px;
+}
+
+#newproduct_slider .jcarousel-container-vertical {
+ 	height: 445px;
+    padding: 0;
+    width:100%;
+}
+
+#newproduct_slider .jcarousel-clip {
+    overflow: hidden;
+}
+
+#newproduct_slider .jcarousel-clip-horizontal {
+    width:  445px;
+    height: 220px;
+}
+
+#newproduct_slider .jcarousel-clip-vertical {
+    width:  100%;
+    height: 445px;
+	background:none;
+	margin:0;
+	padding:0;
+	
+}
+#new_product .page-title { margin-bottom:4px; }
+#new_product .page-title h2{ margin-bottom:0; padding-top:0; }
+#newproduct_slider .jcarousel-item {
+     background: none repeat scroll 0 0 #FFFFFF;
+    height: 210px;
+    overflow: hidden;
+    padding: 6px;
+    text-align: center;
+    width: 179px;
+	 position: relative;
+}
+#new_product .product-name{   border-top: 1px solid #F4F4F4;
+    margin-bottom: 2px;
+    margin-top: 10px;
+    padding-top: 6px;}
+#newproduct_slider .jcarousel-item-horizontal {
+	margin-left: 0;
+    margin-right: 10px;
+}
+
+#newproduct_slider .jcarousel-direction-rtl .jcarousel-item-horizontal {
+	margin-left: 10px;
+    margin-right: 0;
+}
+
+#newproduct_slider .jcarousel-item-vertical {
+    margin-bottom: 0px;
+}
+
+#newproduct_slider .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+#newproduct_slider .jcarousel-next-horizontal {
+    position: absolute;
+    top: 43px;
+    right: 5px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(next-horizontal.png) no-repeat 0 0;
+}
+
+#newproduct_slider .jcarousel-direction-rtl .jcarousel-next-horizontal {
+    left: 5px;
+    right: auto;
+    background-image: url(prev-horizontal.png);
+}
+
+#newproduct_slider .jcarousel-next-horizontal:hover,
+#newproduct_slider .jcarousel-next-horizontal:focus {
+    background-position: -32px 0;
+}
+
+#newproduct_slider .jcarousel-next-horizontal:active {
+    background-position: -64px 0;
+}
+
+#newproduct_slider .jcarousel-next-disabled-horizontal,
+#newproduct_slider .jcarousel-next-disabled-horizontal:hover,
+#newproduct_slider .jcarousel-next-disabled-horizontal:focus,
+#newproduct_slider .jcarousel-next-disabled-horizontal:active {
+    cursor: default;
+    background-position: -96px 0;
+}
+
+#newproduct_slider .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 43px;
+    left: 5px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(prev-horizontal.png) no-repeat 0 0;
+}
+#newproduct_slider{ margin-bottom:0px; }
+#newproduct_slider .jcarousel-direction-rtl .jcarousel-prev-horizontal {
+    left: auto;
+    right: 5px;
+    background-image: url(next-horizontal.png);
+}
+
+#newproduct_slider .jcarousel-prev-horizontal:hover, 
+#newproduct_slider .jcarousel-prev-horizontal:focus {
+    background-position: -32px 0;
+}
+
+#newproduct_slider .jcarousel-prev-horizontal:active {
+    background-position: -64px 0;
+}
+
+#newproduct_slider .jcarousel-prev-disabled-horizontal,
+#newproduct_slider .jcarousel-prev-disabled-horizontal:hover,
+#newproduct_slider .jcarousel-prev-disabled-horizontal:focus,
+#newproduct_slider .jcarousel-prev-disabled-horizontal:active {
+    cursor: default;
+    background-position: -96px 0;
+}
+
+#newproduct_slider .jcarousel-next-vertical {
+    background: url("../../images/sprite.png") no-repeat scroll -4px -241px transparent;
+    border: medium none;
+    bottom: 5px;
+    cursor: pointer;
+    height: 12px;
+    left: 173px;
+    position: absolute;
+    top: -20px;
+    width: 19px;
+	}
+#newproduct_slider .jcarousel-next-vertical:hover	{ background-position:-35px -241px;}
+
+
+#newproduct_slider .jcarousel-next-disabled-vertical,
+#newproduct_slider .jcarousel-next-disabled-vertical:hover,
+#newproduct_slider .jcarousel-next-disabled-vertical:focus,
+#newproduct_slider .jcarousel-next-disabled-vertical:active {
+    cursor: default;
+    background-position: -35px -241px ;
+}
+
+#newproduct_slider .jcarousel-prev-vertical {
+background: url("../../images/sprite.png") no-repeat scroll -4px -232px transparent;
+    border: medium none;
+    cursor: pointer;
+    height: 12px;
+    left: 173px;
+    position: absolute;
+    top: -29px;
+    width: 19px;
+	 
+}
+
+#newproduct_slider .jcarousel-prev-vertical:hover	{background-position:-35px -232px;}
+
+
+#newproduct_slider .jcarousel-prev-disabled-vertical,
+#newproduct_slider .jcarousel-prev-disabled-vertical:hover,
+#newproduct_slider .jcarousel-prev-disabled-vertical:focus,
+#newproduct_slider .jcarousel-prev-disabled-vertical:active {
+    cursor: default;
+    background-position:-35px -232px;
+}
+#newproduct_slider .jcarousel-item-vertical .image{ float: left;
+    margin-right: 5px;}

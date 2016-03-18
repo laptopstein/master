@@ -1,0 +1,40 @@
+<?php
+/**
+ * Unicode Systems
+ * @category   Uni
+ * @package    Uni_Banner
+ * @copyright  Copyright (c) 2010-2011 Unicode Systems. (http://www.unicodesystems.in)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+
+$bannerGroupCode = $this->getBannerGroupCode();
+$data = $this->getDataByGroupCode($bannerGroupCode);
+$bannerGroupData = $data['group_data'];
+$template = '';
+if (count($bannerGroupData) > 0):
+    $prebaneff = $bannerGroupData->getPreBannerEffects();
+    $bannerType = $bannerGroupData->getAnimationType();
+?>
+<?php   
+    if ($bannerType != 1):
+         switch ($prebaneff) {
+            case 'Flex Slider':
+                $template = $this->getLayout()->createBlock('banner/banner', 'strans.banner')->setBannerGroupCode($bannerGroupCode)->setTemplate('banner/effects/flexslider.phtml')->toHtml();
+                break;
+			case 'Play And Pause Slide Show':
+                $template = $this->getLayout()->createBlock('banner/banner', 'playpause.banner')->setBannerGroupCode($bannerGroupCode)->setTemplate('banner/effects/playpause.phtml')->toHtml();
+                break;
+            case 'Numbered Banner':
+                $template = $this->getLayout()->createBlock('banner/banner', 'numbered.banner')->setBannerGroupCode($bannerGroupCode)->setTemplate('banner/effects/numbered.phtml')->toHtml();
+                break;
+            case 'simple banner':
+                $template = $this->getLayout()->createBlock('banner/banner', 'simplebanner.banner')->setBannerGroupCode($bannerGroupCode)->setTemplate('banner/effects/simple_banner.phtml')->toHtml();
+                break;	
+           
+        }
+    endif;
+    echo $template;
+endif;
+?>

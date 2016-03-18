@@ -1,0 +1,123 @@
+#special_slider .jcarousel-skin .jcarousel-container {
+/*    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #F0F6F9;
+    border: 1px solid #346F97;
+*/
+}
+
+#special_slider .jcarousel-skin .jcarousel-direction-rtl {
+	direction: rtl;
+}
+
+#special_slider .jcarousel-skin .jcarousel-container-horizontal {
+    width: 100%;
+    padding: 0 0;
+}
+
+#special_slider .jcarousel-skin .jcarousel-clip {
+    overflow: hidden;
+}
+
+#special_slider .jcarousel-skin .jcarousel-clip-horizontal {
+    width: 100%;
+    height: auto;
+}
+
+#special_slider .jcarousel-skin .jcarousel-item {
+     width: 235px;
+    height:auto !important;
+	margin:0 18px 0 0;
+}
+
+#special_slider .jcarousel-skin .jcarousel-item-horizontal {
+		text-align:center;
+}
+
+#special_slider .jcarousel-skin .jcarousel-direction-rtl .jcarousel-item-horizontal {
+	margin-left: 10px;
+    margin-right: 0;
+}
+
+#special_slider .jcarousel-skin .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+#special_slider .jcarousel-skin .jcarousel-next-horizontal {
+  background:url("../../images/sprite.png") no-repeat scroll 0 -617px transparent;
+    cursor: pointer;
+    height: 36px;
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 27px;
+  /*  background: transparent url(next-horizontal.png) no-repeat 0 0;*/
+}
+
+#special_slider .jcarousel-skin .jcarousel-direction-rtl .jcarousel-next-horizontal {
+    left: 5px;
+    right: auto;
+    background-image: url(prev-horizontal.png);
+}
+
+#special_slider .jcarousel-skin .jcarousel-next-horizontal:hover,
+#special_slider .jcarousel-skin .jcarousel-next-horizontal:focus {
+  background-position:0 -668px;
+}
+
+#special_slider .jcarousel-skin .jcarousel-next-horizontal:active {
+   background-position:0 -668px;
+}
+
+#special_slider .jcarousel-skin .jcarousel-next-disabled-horizontal,
+#special_slider .jcarousel-skin .jcarousel-next-disabled-horizontal:hover,
+#special_slider .jcarousel-skin .jcarousel-next-disabled-horizontal:focus,
+#special_slider .jcarousel-skin .jcarousel-next-disabled-horizontal:active {
+    cursor: default;
+    background-position:0 -668px;
+}
+
+#special_slider .jcarousel-skin .jcarousel-prev-horizontal {
+   height: 36px;
+    position: absolute;
+    right: 22px;
+    top: -50px;
+    cursor: pointer;
+	 width: 27px;
+    background: url("../../images/sprite.png") no-repeat scroll 0 -718px transparent;
+}
+
+#special_slider .jcarousel-skin .jcarousel-direction-rtl .jcarousel-prev-horizontal {
+    left: auto;
+    right: 5px;
+    background-image: url(next-horizontal.png);
+}
+
+#special_slider .jcarousel-skin .jcarousel-prev-horizontal:hover, 
+#special_slider .jcarousel-skin .jcarousel-prev-horizontal:focus {
+     background-position:  0 -769px;
+}
+
+#special_slider.jcarousel-skin .jcarousel-prev-horizontal:active {
+    background-position:  0 -769px;
+}
+
+#special_slider .jcarousel-skin .jcarousel-prev-disabled-horizontal,
+#special_slider .jcarousel-skin .jcarousel-prev-disabled-horizontal:hover,
+#special_slider.jcarousel-skin .jcarousel-prev-disabled-horizontal:focus,
+#special_slider .jcarousel-skin .jcarousel-prev-disabled-horizontal:active {
+    cursor: default;
+    background-position:  0 -769px;
+}
+
+#special_slider .jcarousel-skin .jcarousel-item .actions	{ margin-bottom:8px;}
+
+#special_product .page-title  { background: url("../../images/tobbottom_line.png") repeat-x scroll left bottom transparent !important;
+    padding-bottom: 10px;
+    text-align: left;
+    width: 100%;}

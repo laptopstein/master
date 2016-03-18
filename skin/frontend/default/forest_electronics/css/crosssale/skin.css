@@ -1,0 +1,130 @@
+.crosssell .jcarousel-skin .jcarousel-container {
+/*    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #F0F6F9;
+    border: 1px solid #346F97;
+*/
+}
+
+
+.crosssell  .jcarousel-skin .jcarousel-container {
+/*    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #F0F6F9;
+    border: 1px solid #346F97;
+*/
+}
+
+.crosssell  .jcarousel-skin .jcarousel-direction-rtl {
+	direction: rtl;
+}
+
+.crosssell  .jcarousel-skin .jcarousel-container-horizontal {
+    width: 100%;
+    padding: 0 0;
+}
+
+.crosssell  .jcarousel-skin .jcarousel-clip {
+    overflow: hidden;
+}
+
+.crosssell  .jcarousel-skin .jcarousel-clip-horizontal {
+    width: 100%;
+    height: auto;
+}
+
+.crosssell  .jcarousel-skin .jcarousel-item {
+     width: 235px;
+    height:auto !important;
+	margin:0 18px 0 0;
+}
+
+.crosssell  .jcarousel-skin .jcarousel-item-horizontal {
+	 
+		text-align:left;
+}
+
+.crosssell  .jcarousel-skin .jcarousel-direction-rtl .jcarousel-item-horizontal {
+	margin-left: 10px;
+    margin-right: 0;
+}
+
+.crosssell  .jcarousel-skin .jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+/**
+ *  Horizontal Buttons
+ */
+.crosssell  .jcarousel-skin .jcarousel-next-horizontal {
+ 		background:url("../../images/sprite.png") no-repeat scroll 0 -617px transparent;
+    cursor: pointer;
+    height: 36px;
+    position: absolute;
+    right: 0;
+    top: -45px;
+    width: 27px;
+}
+
+.crosssell  .jcarousel-skin .jcarousel-direction-rtl .jcarousel-next-horizontal {
+    left: 5px;
+    right: auto;
+    background-image: url(prev-horizontal.png);
+}
+
+.crosssell  .jcarousel-skin .jcarousel-next-horizontal:hover,
+.crosssell  .jcarousel-skin .jcarousel-next-horizontal:focus {
+  background-position: 0 -668px;
+}
+
+.crosssell  .jcarousel-skin .jcarousel-next-horizontal:active {
+background-position: 0 -668px;
+}
+
+.crosssell  .jcarousel-skin .jcarousel-next-disabled-horizontal,
+.crosssell  .jcarousel-skin .jcarousel-next-disabled-horizontal:hover,
+.crosssell  .jcarousel-skin .jcarousel-next-disabled-horizontal:focus,
+.crosssell  .jcarousel-skin .jcarousel-next-disabled-horizontal:active {
+    cursor: default;
+     background-position: 0 -668px;
+}
+
+.crosssell  .jcarousel-skin .jcarousel-prev-horizontal {
+     height: 36px;
+    position: absolute;
+    right: 22px;
+    top: -45px;
+    cursor: pointer;
+	 width: 27px;
+    background: url("../../images/sprite.png") no-repeat scroll 0 -718px transparent;
+}
+
+.crosssell  .jcarousel-skin .jcarousel-direction-rtl .jcarousel-prev-horizontal {
+    left: auto;
+    right: 5px;
+    background-image: url(next-horizontal.png);
+}
+
+.crosssell  .jcarousel-skin .jcarousel-prev-horizontal:hover, 
+.crosssell  .jcarousel-skin .jcarousel-prev-horizontal:focus {
+  background-position: 0 -769px;
+}
+
+.crosssell .jcarousel-skin .jcarousel-prev-horizontal:active {
+   background-position: 0 -769px;
+}
+
+.crosssell  .jcarousel-skin .jcarousel-prev-disabled-horizontal,
+.crosssell  .jcarousel-skin .jcarousel-prev-disabled-horizontal:hover,
+.crosssell .jcarousel-skin .jcarousel-prev-disabled-horizontal:focus,
+.crosssell  .jcarousel-skin .jcarousel-prev-disabled-horizontal:active {
+    cursor: default;
+     background-position: 0 -769px;
+}
+
+.crosssell  .jcarousel-skin .jcarousel-item .actions	{ margin-bottom:8px;}
+
+ 

@@ -1,0 +1,49 @@
+<div class="block block-blog">
+    <div class="block-title">
+        <strong><span><?php echo $this->__('Blog') ?></span></strong>
+    </div>
+    <div class="block-content">
+
+ <?php
+$cats = $this->getCategories();
+foreach($cats as $cat):
+    $category_list[] = $cat['title'];
+endforeach;
+
+$post_max = 3; //limit to showing x posts only
+$print_divs = 0;
+$print_ul = 0;
+
+$posts = $this->getPosts();
+foreach($category_list as $category):
+    $print_divs = 1;
+    $print_ul = 1;
+    $count = 1;
+    foreach($posts as $post):
+        $postCats = $post->getCats();
+        foreach($postCats as $title=>$url):
+            if($category == $title && $count <= $post_max):
+
+?>
+                <div class="Wrapper" style="padding:10px 5px 10px 5px; clear:both;">
+                     <h5>
+                        <a href="<?php echo $post->getAddress(); ?>" ><?php echo $title ?>: 
+                         <?php echo $post->getTitle();?></a></h5>
+                       
+                        <?php echo $post->getPostContent(); ?>
+                    
+                </div>
+                    
+<?php
+ 
+            $count++;
+            endif;
+        endforeach;
+    endforeach;
+
+endforeach;            
+?> 
+
+
+    </div>
+</div>

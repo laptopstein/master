@@ -1,0 +1,69 @@
+/* protofade */
+#protofade, #protofade2, #protofade3, #protofade4 { position:relative; margin:0; padding:0px; overflow:hidden; }
+#slider-container, #slider-container2 { border: none; padding: 1px;}
+#protofade3, #protofade4 { border: none; }
+#slider-container4, #protofade4 { height:190px; }
+#protofade li, #protofade2 li, #protofade3 li { position:absolute; top:0; left:0; margin:0; padding:0; background:none;}
+#protofade4 div { position:absolute; top:0; left:0; margin:0; padding:10px; background:none; text-align:left}
+/*********************Square Transition Banner**************************/
+#protofade2 img.trans-banner-img{cursor: pointer;}
+/*********************Text Fade Banner**************************/
+#slider-container4{border:1px solid #DDDDDD;}
+#protofade4{margin:3px;}
+#protofade4 .fade-banner-title{cursor: pointer; text-align:left; padding:0 0 2px;}
+/*********************Play And Pause Slide Show**************************/
+#protofade3 .slide-banner-txt{padding:3px;}
+
+.controls .next
+{ 
+	 background:  url("../../images/sprite.png") no-repeat scroll -6px -2118px transparent;
+    font-size: 0;
+    height: 59px !important;
+    position: absolute;
+    right: -40px;
+    top: -260px;
+    width: 29px !important;
+	
+}
+.controls .previous 
+{ 
+	background: url("../../images/sprite.png") no-repeat scroll -9px -1937px transparent;
+    height: 59px !important;
+    left: 0px;
+    position: absolute;
+    top: -260px;
+    width: 29px !important;
+	font-size:0;
+}
+.controls .previous:hover	{ background-position:-9px -2028px;} 
+.controls .next:hover		{ background-position:-6px -2209px;}
+
+.controls .start
+{ 
+	background: url("../../images/play.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-size: 0;
+    height: 8px;
+    left:360px;
+    opacity: 0.5;
+    padding: 10px !important;
+    position: absolute;
+    top: -250px;
+    width: 5px;
+}
+
+.controls .stop 
+{ 
+	background: url("../../images/play_stop.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-size: 0;
+    height: 8px;
+    left: 390px;
+    opacity: 0.5;
+    padding: 10px !important;
+    position: absolute;
+    top: -250px;
+    width: 5px;
+}
+.controls .stop:hover,.controls .start:hover		{  opacity:1;}
+#slider-container3	{ height:auto !important;}

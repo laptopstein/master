@@ -1,0 +1,152 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
+<meta charset="UTF-8" />
+<!-- start: Mobile Specific -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+<!-- end: Mobile Specific -->
+
+
+<?php if (($this->getTitle() != "Magento Commerce" ) && ($this->getTitle() != NULL )): ?>
+<title><?php echo trim($this->getTitle()) ?></title>
+<?php endif; ?>
+<meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
+<?php if (($this->getDescription() != "Default Description") && ($this->getDescription() != NULL )):?>
+<meta name="description" content="<?php echo strip_tags($this->getDescription()) ?>" />
+<?php endif; ?>
+<?php if (($this->getKeywords() != "Magento, Varien, E-commerce" ) && ($this->getKeywords() != NULL )):?>
+<meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
+<?php endif; ?>
+<?php if (($this->getRobots() != "INDEX,FOLLOW") && ($this->getRobots() != "*")) :?>
+<meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
+<?php endif; ?>
+<link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = '<?php echo $this->helper('core/js')->getJsUrl('blank.html') ?>';
+	var SPINNER_IMG = '<?php echo $this->helper('core/js')->getJsUrl('megnor/lazierload/spinner.gif') ?>'; // Added lazierload
+    var BLANK_IMG = '<?php echo $this->helper('core/js')->getJsUrl('spacer.gif') ?>';
+//]]>
+</script>
+
+<?php echo $this->getCssJsHtml() ?>
+<?php echo $this->getChildHtml() ?>
+<?php echo $this->helper('core/js')->getTranslatorScript() ?>
+<?php echo $this->getIncludes() ?>
+<link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+
+<?php
+
+$font_family2 = $this->helper('framework')->getTemplateHeadingFontType();
+$font_family3 = $this->helper('framework')->getTemplateButtonFontType();
+$font_family4 = $this->helper('framework')->getTemplateHeaderTopLinkFontType();
+$font_family5 = $this->helper('framework')->getTemplateNavLinkFontType();
+$font_family6 = $this->helper('framework')->getTemplateBreadcrumbFontType();
+$font_family7 = $this->helper('framework')->getTemplateFooterTextFontType();
+$font_family8 = $this->helper('framework')->getTemplateFooterLinkFontType();
+?>
+
+
+
+<?php
+ // REMOVES DUPLICATE GOOGLE FONT CALL
+    $fonts_array = array($font_family1,$font_family2,$font_family3,$font_family4,$font_family5,$font_family6,$font_family7,$font_family8);
+    // REMOVES DUPLICATE GOOGLE FONT CALL
+    $fonts_array= array_unique($fonts_array);
+    foreach ($fonts_array as $key => $val)
+    {
+	if($val!='' && $val!='--Please Select--' && $val!='Other Font' && $val!='Varela'){  ?>
+    <link href='http://fonts.googleapis.com/css?family=<?php echo $val; ?>' rel='stylesheet' type='text/css'>
+    <?php }
+      }
+	  
+	  
+	  
+    // end REMOVES DUPLICATE GOOGLE FONT CALL
+?>
+<script>
+$f = jQuery.noConflict();
+	$f(window).load(function() { $f(".spinner").fadeOut("slow"); })
+</script>
+
+
+<!-- ========================================== Javascript For PIE (Enable Css3 for IE7) ================================ -->
+		
+<!--<script>
+jQuery(function($) {
+    if (window.PIE) {
+        $('.button').each(function() {
+            PIE.attach(this);
+        });
+        $('input').each(function() {
+            PIE.attach(this);
+        });
+		 $('#nav').each(function() {
+            PIE.attach(this);
+        });
+		
+		$('.chzn-container-single .chzn-single').each(function() {
+            PIE.attach(this);
+        });
+		
+    }
+});
+</script>-->
+
+<?php
+// SET META REL for Categroy Filters like Paging , Shopby filters / Best Practice for SEO
+$actionName = $this->getAction()->getFullActionName();
+if ($actionName == 'catalog_category_view') // Category Page
+{
+    $category = Mage::registry('current_category');
+    $prodCol = $category->getProductCollection()->addAttributeToFilter('status', 1)->addAttributeToFilter('visibility', array('in' => array(Mage_Catalog_Model_Product_Visibility::VISIBILITY_IN_CATALOG, Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH)));
+    $tool = $this->getLayout()->createBlock('page/html_pager')->setLimit($this->getLayout()->createBlock('catalog/product_list_toolbar')->getLimit())->setCollection($prodCol);
+    $linkPrev = false;
+    $linkNext = false;
+    if ($tool->getCollection()->getSelectCountSql()) {
+        if ($tool->getLastPageNum() > 1) {
+            if (!$tool->isFirstPage()) {
+                $linkPrev = true;
+                if ($tool->getCurrentPage() == 2) {
+                    $url = explode('?', $tool->getPreviousPageUrl());
+                    $prevUrl = @$url[0];
+                }
+                else {
+                    $prevUrl = $tool->getPreviousPageUrl();
+                }
+            }
+            if (!$tool->isLastPage()) {
+                $linkNext = true;
+                $nextUrl = $tool->getNextPageUrl();
+            }
+        }
+    }
+    if ($linkPrev) echo '<link rel="prev" href="' . $prevUrl . '" />';
+    if ($linkNext) echo '<link rel="next" href="' . $nextUrl . '" />';
+}
+?>

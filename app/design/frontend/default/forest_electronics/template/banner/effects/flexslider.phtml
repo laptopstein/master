@@ -1,0 +1,59 @@
+<?php
+/**
+ * Unicode Systems
+ * @category   Uni
+ * @package    Uni_Banner
+ * @copyright  Copyright (c) 2010-2011 Unicode Systems. (http://www.unicodesystems.in)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo $this->getSkinUrl('banner/css/tm_flexslider.css') ?>" />
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('banner/js/tm_jquery.flexslider.js') ?>"></script>
+<?php
+$bannerGroupCode = $this->getBannerGroupCode();
+$data = $this->getDataByGroupCode($bannerGroupCode);
+$bannerGroupData = $data['group_data'];
+$mediaDir = Mage::getBaseDir('media');
+$bannerData = $data['banner_data'];
+$bannerdest = (($bannerGroupData->getLinkTarget() == 0) ? '_blank' : '_self');
+$bannerType = $bannerGroupData->getAnimationType();
+$duration = Mage::getStoreConfig('banner/banner/banner_time_delay');
+$autoplay = Mage::getStoreConfig('banner/banner/banner_autoplay');
+?>
+<div class="slider">
+        <div class="flexslider">
+           <ul class="slides">
+            <?php
+            $i = 0;
+            foreach ($bannerData as $banner):
+                $i++;
+                $disp = (($i == 1) ? 'inline' : 'none');
+                $v = "imgnumber" . $i;
+                $bannerPath = $banner->getFilename();
+                $bannerType = $banner->getBannerType();
+                $bannerTitle = $banner->getTitle();
+                $bannerLink = $banner->getLink();
+                $bannerContent = $banner->getBannerContent();
+                if ($bannerType == 0) :
+                    $bannerImage = '';
+                    if ($bannerPath != '' && @file_exists($mediaDir . DS . $bannerPath)) :
+                        $bannerImage = $this->getResizeImage($bannerPath, $bannerGroupCode);
+                    endif;
+                    if ($bannerImage != '') :
+                        ?>
+					   	<li>
+                            <a href="<?php echo (($bannerLink) ? $bannerLink : 'javascript:'); ?>" title="<?php echo $bannerTitle; ?>" <?php echo (($bannerLink) ? 'target="' . $bannerdest . '"' : ''); ?>><img src="<?php echo $bannerImage; ?>"  style="<?php echo $styleWH; ?>" alt="<?php echo $bannerTitle; ?>"/></a>
+                      	</li>
+                    <?php endif;
+                else: ?>
+				  <li>
+                        <a href="<?php echo (($bannerLink) ? $bannerLink : 'javascript:'); ?>" title="<?php echo $bannerTitle; ?>" <?php echo (($bannerLink) ? 'target="' . $bannerdest . '"' : ''); ?>><?php echo $bannerContent; ?></a>
+						</li>
+                <?php
+                endif;
+            endforeach;
+            ?>
+			</ul>
+        </div>
+        
+</div>

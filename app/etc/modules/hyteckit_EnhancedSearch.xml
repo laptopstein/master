@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <hyteckit_EnhancedSearch>
+            <active>true</active>
+            <codePool>community</codePool>
+        </hyteckit_EnhancedSearch>
+    </modules>
+</config> 

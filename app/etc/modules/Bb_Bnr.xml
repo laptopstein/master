@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Bb_Bnr>
+            <version>1.0.0</version>
+            <codePool>community</codePool>
+            <active>true</active>
+        </Bb_Bnr>
+    </modules>
+</config>

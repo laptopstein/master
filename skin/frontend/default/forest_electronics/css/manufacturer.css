@@ -1,0 +1,25 @@
+
+.block-brand-nav {}
+
+.block-brand-nav .block-content{ padding:10px;}
+
+#brands_list_select { width:100%;}
+.block-brand-nav ul { margin:10px; margin-top:0;}
+.block-brand-nav ul li{ background-image:url("../images/bullet.gif"); background-position:left 7px;background-repeat:no-repeat;padding-left:9px; }
+.block-brand-nav li ul {margin-bottom:2px;margin-left:5px;margin-top:2px;padding:0; }
+
+.block-brand-nav li a:link, .block-brand-nav li a:visited{}
+.block-brand-nav li ul li a:link, .block-brand-nav li ul li a:visited{}
+.block-brand-nav li ul li ul li a:link, .block-brand-nav li ul li ul li a:visited {}
+
+.block-brand-nav li a:hover, .block-brand-nav li.active a{}
+
+.block-brand-nav li ul li a:hover, .block-brand-nav li ul li.active a{}
+
+.block-brand-nav li ul li ul li a:hover, .block-brand-nav li ul li ul li.active a {}
+
+.block-brand-nav li.active a { }
+.block-brand-nav ul.level0 { list-style-type:none;}
+.block-brand-nav ul.level1 { list-style-type:none;}
+.block-brand-nav ul.level2 { list-style-type:none;}
+.block-brand-nav ul.level3 { list-style-type:none;}

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <bb_products>
+            <children>
+                <bb_bnr>
+                    <title>BNR</title>
+                    <sort_order>0</sort_order>
+                    <action>adminhtml/system_config/edit/section/currency</action>
+                    <children>
+                        <bb_bnr>
+                            <title>Configure BNR currency import</title>
+                            <sort_order>0</sort_order>
+                            <action>adminhtml/system_config/edit/section/currency</action>
+                        </bb_bnr>
+                        <bb_help>
+                            <title>Help</title>
+                            <sort_order>110</sort_order>
+                            <action>adminhtml/bbModules/help/module/bb_bnr</action>
+                        </bb_help>
+                    </children>
+                </bb_bnr>
+            </children>
+        </bb_products>
+
+    </menu>
+
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <bb_products>
+                        <title>BB Products - Menu</title>
+                        <sort_order>1</sort_order>
+                        <children>
+                            <bb_bnr>
+                                <title>BNR</title>
+                                <sort_order>0</sort_order>
+                                <children>
+                                    <bb_bnr>
+                                        <title>Configure BNR currency import</title>
+                                        <sort_order>0</sort_order>
+                                    </bb_bnr>
+                                    <bb_help>
+                                        <title>Help</title>
+                                        <sort_order>110</sort_order>
+                                    </bb_help>
+                                </children>
+                            </bb_bnr>
+                        </children>
+                    </bb_products>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

@@ -1,0 +1,109 @@
+<script>
+jQuery(function($){
+  $("button.nav-button").click(function(){
+   $("#responsive_menuinner").slideToggle(500);
+   $("button.nav-button").toggleClass("down_arrow");
+  });
+});
+</script>
+
+
+
+
+<?php $_categories = $this->getStoreCategories() ?>
+<?php if(count($_categories)): ?>
+<div class="nav-container">
+    <div id="advancedmenu">
+        <?php if ($this->showHomeLink()) : ?>
+        <div class="menu home-link ">
+            <div class="parentMenu menu0">
+                <a href="<?php echo $this->getUrl('') ?>">
+                    <span><?php echo $this->__('Home'); ?></span>
+                </a>
+            </div>
+        </div>
+        <?php endif ?>
+     <?php foreach ($_categories as $_category): ?>
+            <?php echo $this->drawAdvancedMenuItem($_category) ?>
+        <?php endforeach ?>
+        
+		
+		<!-- ================= Start Extra Link ===========-->
+		<?php if($this->helper('framework')->getcustomemenulink()):?>
+			<?php 
+				$name1 = $this->helper('framework')->getcustomemenulink1();
+				$identifier1 = $this->helper('framework')->getcustomemenulinkidentifier1();
+				
+				$name2 = $this->helper('framework')->getcustomemenulink2();
+				$identifier2 = $this->helper('framework')->getcustomemenulinkidentifier2();
+				
+				$name3 = $this->helper('framework')->getcustomemenulink3();
+				$identifier3 = $this->helper('framework')->getcustomemenulinkidentifier3();
+				
+			?>
+		<?php if($name1 != ''){ ?><div class="menu"><a href="<?php echo $this->getUrl($identifier1)?>"><span><?php echo $this->__($name1) ?></span></a></div><?php } ?>
+		<?php if($name2 != ''){ ?><div class="menu"><a href="<?php echo $this->getUrl($identifier2)?>"><span><?php echo $this->__($name2) ?></span></a></div><?php } ?>
+		<?php if($name3 != ''){ ?><div class="menu"><a href="<?php echo $this->getUrl($identifier3)?>"><span><?php echo $this->__($name3) ?></span></a></div><?php } ?>
+			
+		<?php endif?>
+		<!-- ================= End Extra Link ===========-->
+		
+		<?php if ($this->isActivecustomBlock()) : 
+			$custom_block_name =  Mage::getStoreConfig('advanced_menu/customblock/menucustomblock_name'); 
+			$custom_block_identifier =  Mage::getStoreConfig('advanced_menu/customblock/customblock_identifier'); 
+			$custom_topoffset = Mage::getStoreConfig('advanced_menu/popup/top_offset') + 0;
+		?>
+			
+			<div class="menu">
+				<div class="custom_menu menu">
+					<a><span><?php echo $custom_block_name; ?></span></a>
+				<div class="customblock_inner megnor-advanced-menu-popup" style="top:<?php echo $custom_topoffset; ?>px">
+					<div class="megnor-advanced-menu-popup_inner">
+						<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($custom_block_identifier)->toHtml() ?> 
+					</div>	
+				</div>
+				</div>
+			</div>
+		<?php  endif;?>	
+		
+		
+		<div class="clearBoth"></div>
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+var CUSTOMMENU_POPUP_WIDTH = <?php echo Mage::getStoreConfig('advanced_menu/popup/width') + 0; ?>;
+var CUSTOMMENU_POPUP_TOP_OFFSET = <?php echo Mage::getStoreConfig('advanced_menu/popup/top_offset') + 0; ?>;
+var CUSTOMMENU_POPUP_RIGHT_OFFSET_MIN = <?php echo Mage::getStoreConfig('advanced_menu/popup/right_offset_min') + 0; ?>;
+var CUSTOMMENU_POPUP_DELAY_BEFORE_DISPLAYING = <?php echo Mage::getStoreConfig('advanced_menu/popup/delay_displaying') + 0; ?>;
+var CUSTOMMENU_POPUP_DELAY_BEFORE_HIDING = <?php echo Mage::getStoreConfig('advanced_menu/popup/delay_hiding') + 0; ?>;
+var megnorCustommenuTimerShow = {};
+var megnorCustommenuTimerHide = {};
+//]]>
+</script>
+<?php endif ?>
+
+<?php $_menu = $this->renderCategoriesMenuHtml(0,'level-top') ?>
+<?php if($_menu): ?>
+<nav class="nav-container1">
+	<button class="nav-button main-but">
+		Menu
+	<span class="right_bullet"></span>	
+	</button>
+	<div id="responsive_menuinner">
+		<ul id="topnav" class="primary-nav">
+			<?php echo $_menu ?>
+		</ul>
+	</div>
+</nav>
+<?php endif ?>
+
+<script>
+	jQuery(document).ready(function() {
+    jQuery('.custom_menu').mouseover(function() {
+        jQuery('.customblock_inner').show();
+    }).mouseout(function() {
+        jQuery('.customblock_inner').hide();
+    });
+});
+</script>

@@ -1,0 +1,87 @@
+<?php
+$maufacturers = Mage::getModel('manufacturer/manufacturer')->getCollection()->addFieldToFilter('status',Array('eq'=>1));    
+?>
+<?php /*?><div class="page-title"><h2><?php echo $this->getHeading(); ?></h2></div>
+<?php */?>
+<div id="manufacture_product" class="homepage_productgrid">
+<article class="category-products manufacturer-list">
+
+<?php if($this->isActiveSlider()):?>
+
+<script>
+// Manufacure Product
+var $m=jQuery.noConflict();
+  $m(document).ready(function() {
+    $m('#manufacturerCarousel').jcarousel({
+      scroll: 1,
+      animation: 1200,
+      auto: 0
+    });
+  });
+ 
+</script>
+
+	<div id="manufacture_slider">
+	<ul id="manufacturerCarousel" class="jcarousel-skin">
+	
+	<?php foreach($maufacturers as $manufacturer): ?>
+		
+		<?php if(Mage::getModel('eav/entity_attribute_source_table')->setAttribute(Mage::getModel('eav/entity_attribute')->load(Mage::getModel('eav/entity_attribute')->getIdByCode('catalog_product', Mage::getStoreConfig('manufacturer/general/attribute_code'))))->getOptionText($manufacturer->getManufacturerName())): ?>
+		
+		<li class="item">		
+
+					<a href="<?php echo $manufacturer->getUrl();?>">
+						<?php echo $this->getLayout()->createBlock('core/template')->setmanufacturerimage($manufacturer->getFilename())->setListPageFlag(1)->setTemplate('manufacturer/manufacturer_resize.phtml')->toHtml(); ?>
+					</a>
+					
+					<?php if($this->displayName()):?>
+					<div class="manufacturer-name">
+						<a href="<?php echo $manufacturer->getUrl(); ?>">  <?php echo Mage::getModel('eav/entity_attribute_source_table')->setAttribute(Mage::getModel('eav/entity_attribute')->load(Mage::getModel('eav/entity_attribute')->getIdByCode('catalog_product', Mage::getStoreConfig('manufacturer/general/attribute_code'))))->getOptionText($manufacturer->getManufacturerName()) ?>
+						</a>
+					</div>
+					<?php endif; ?>
+		 </li>
+	
+		<?php endif; ?>
+
+	<?php endforeach; ?>
+	</ul>
+	</div>
+<?php else: ?>	
+	
+	<ul class="products-grid" id="manufacture_home">
+	<?php foreach($maufacturers as $manufacturer): ?>
+	
+			
+		<?php if(Mage::getModel('eav/entity_attribute_source_table')->setAttribute(Mage::getModel('eav/entity_attribute')->load(Mage::getModel('eav/entity_attribute')->getIdByCode('catalog_product', Mage::getStoreConfig('manufacturer/general/attribute_code'))))->getOptionText($manufacturer->getManufacturerName())): ?>			
+		
+		<li class="item">
+			<div class="product-block">
+				<div class="product-block-inner">
+
+					<a href="<?php echo $manufacturer->getUrl();?>">
+						<?php echo $this->getLayout()->createBlock('core/template')->setmanufacturerimage($manufacturer->getFilename())->setListPageFlag(1)->setTemplate('manufacturer/manufacturer_resize.phtml')->toHtml(); ?>
+					</a>
+					
+					<?php if($this->displayName()):?>
+					<div class="manufacturer-name">
+						<a href="<?php echo $manufacturer->getUrl(); ?>">  <?php echo Mage::getModel('eav/entity_attribute_source_table')->setAttribute(Mage::getModel('eav/entity_attribute')->load(Mage::getModel('eav/entity_attribute')->getIdByCode('catalog_product', Mage::getStoreConfig('manufacturer/general/attribute_code'))))->getOptionText($manufacturer->getManufacturerName()) ?>
+						</a>
+					</div>
+					<?php endif; ?>
+				</div>
+			</div>		
+		 </li>					
+	
+		<?php endif; ?>
+
+		 
+	<?php endforeach; ?>
+	</ul>	
+	
+<?php endif; ?>
+
+
+
+</article>
+</div>

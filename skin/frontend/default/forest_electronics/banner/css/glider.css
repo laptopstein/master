@@ -1,0 +1,81 @@
+/*#slider{margin: 0 auto; overflow: hidden; margin-bottom: 13px; border: 1px solid #ccc;}*/
+div#sliderhori		{ margin:0 auto;width:auto !important;}
+div.scroller .content {padding: 0;}
+div.scroller img{border: none;}
+.content .sliderdescription{background: url(images/grid.gif) repeat left top; color: #222; font: 12px bold ; left: 15px; opacity: 0.5; padding: 10px; position: relative; top: -100px; width: 650px;}
+div.sliderdescription:hover, .sliderdescription.active{background-color: #fff !important;}
+.content a{font: 12px bold; text-decoration: none;}
+.aprev
+{
+	background: url("../../images/sprite.png") no-repeat scroll -4px -296px transparent;
+    height: 72px !important;
+    right: 1030px;
+	font-size:0;
+    position: absolute;
+    top: -310px;
+    width: 72px !important
+}
+.anext
+{
+	background: url("../../images/sprite.png") no-repeat scroll -4px -86px transparent;;
+    height: 72px !important;
+    right: -95px;
+    position: absolute;
+    top: -310px;
+    width: 72px !important;
+	font-size:0;
+}
+.aprev:hover	{ background-position:-4px -406px} 
+.anext:hover		{ background-position:-4px -195px}
+
+
+.astop
+{
+	background: url("../../images/play_stop.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-size: 0;
+    height: 8px;
+    right: 500px;
+    opacity: 0.5;
+    padding: 10px !important;
+    position: absolute;
+    top: -290px;
+    width: 5px;
+}
+.aplay
+{
+	background: url("../../images/play.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-size: 0;
+    height: 8px;
+    right: 470px;
+    opacity: 0.5;
+    padding: 10px !important;
+    position: absolute;
+    top: -290px;
+    width: 5px;
+}
+
+/*********************Vertical************************/
+#slider{margin: 0 auto;}
+div.scroller{overflow: hidden; position: relative;}
+div.scroller div.section{float: left; overflow: hidden; }
+div.scroller span.content{float:none;}
+div#slider .bannerlinerglider{background: none; display: inline; height: 28px; margin-left: 2px; margin-top: -28px; opacity: 0.45; position: absolute; z-index: 999;}
+div#slider .slidercontrol{margin: 0; position: relative; z-index: 1000; color: #000000; float: right;}
+
+div#slider .slidercontrol a:hover{opacity: 1;}
+/*********************Horizontal************************/
+div#sliderhori .bannerlinergliderhori{background: none; display: inline; height: 28px; margin-left: 2px; margin-top: -28px; opacity: 0.45; position: absolute; z-index: 999;}
+div#sliderhori div.scrollerhori{overflow: hidden;  position: relative;}
+div#sliderhori div.scrollerhori .contenthori{width: 1000000px;}
+div#sliderhori div.scrollerhori div.sectionhori{float: left; overflow: hidden; padding-left: 1px;}
+div#sliderhori .slidercontrolhori
+{
+	position: absolute; 
+	z-index: 1000; 
+	color: #000000;
+	float: right;
+	width:980px;
+}
+div#sliderhori .slidercontrolhori a:hover{opacity: 1;}
