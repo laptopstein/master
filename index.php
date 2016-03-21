@@ -24,7 +24,7 @@
  * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-
+die("working");
 ini_set('display_errors', 1);
 ini_set('memory_limit', '1024M');
 ini_set('max_execution_time', 1200);
