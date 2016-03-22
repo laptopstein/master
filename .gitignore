@@ -51,6 +51,7 @@ downloader/
 errors/
 favicon.ico
 /get.php
+/index.php
 includes/
 index.php.sample
 /install.php
